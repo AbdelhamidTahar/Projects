@@ -1,0 +1,130 @@
+#include <iostream>
+#include <string>
+#include "Input.h"
+using namespace std;
+
+bool Validations::IsHasSymbol(const string& Input)
+{
+	for (const char& Character : Input)
+	{
+		if (ispunct(Character))
+			return true;
+	}
+	return false;
+
+}
+bool Validations::IsHasDigit(const string& Input)
+{
+	for (const char& Character : Input)
+	{
+		if (isdigit(Character))
+			return true;
+	}
+	return false;
+
+}
+bool Validations::IsHasChar(const string& Input)
+{
+	for (const char& Character : Input)
+	{
+		if (isalpha(Character))
+			return true;
+	}
+	return false;
+
+}
+bool Validations::IsDecimalNumberValidat(const string& Input)
+{
+	if (Validations::IsHasChar(Input))
+	{
+		return false;
+	}
+
+	vector<string>StringIntoParts;
+	StringIntoParts = InputOperations::SplitStringIntoPartsUsingSeparator(Input);
+
+	if (StringIntoParts.empty())
+	{
+		return !IsHasSymbol(Input);
+	}
+
+	if (IsHasSymbol(StringIntoParts[0]) || IsHasSymbol(StringIntoParts[1]))
+		return false;
+
+	return true;
+}
+bool Validations::IsIDValidat(const string& ID)
+{
+	return !IsHasSymbol(ID);
+}
+
+
+
+string Reads::ReadID(const string& Message)
+{
+	string ID = "";
+	cout << Message;
+	cin >> ID;
+
+	if (!Validations::IsIDValidat(ID))
+	{
+		Messages::PrintErrorMessage(ID);
+		return ReadID(Message);
+	}
+	return ID;
+}
+
+
+bool Checks::IsVectorOfStringIsEmpty(vector<string>& vStrings)
+{
+	return vStrings.empty();
+}
+
+bool Checks::IsStringEmpty(const string& Text)
+{
+	return (Text.length() != 0 ? false : true);
+}
+
+void Messages::PrintErrorMessage(const string& ErrorMessage)
+{
+	cout << ErrorMessage;
+}
+
+vector<string> InputOperations::SplitStringIntoPartsUsingSeparator(string Input,const string & Separator)
+{
+	vector<string> vPartsOfInput;
+	short Pos = 0;
+
+	if (Pos = Input.find(Separator) != std::string::npos)
+	{
+		while (Pos = Input.find(Separator) != std::string::npos)
+		{
+			vPartsOfInput.push_back(Input.substr(0, Pos));
+			Input = Input.erase(0, Pos + Separator.length());
+			vPartsOfInput.push_back(Input);
+		}
+	}
+
+	return vPartsOfInput;
+}
+
+double Reads::ReadPositiveDecimalNumber(const string& Message)
+{
+	string DecimalNumber = "";
+	cout << Message;
+	cin >> DecimalNumber;
+	if (!Validations::IsDecimalNumberValidat(DecimalNumber))
+	{
+		Messages::PrintErrorMessage
+		("Invalid input. Symbols and Chars are not allowed. Please enter a decimal number and try again.");
+		return ReadPositiveDecimalNumber(Message);
+	}
+	if (stod(DecimalNumber) < 0)
+	{
+		Messages::PrintErrorMessage
+		("Invalid input. Symbols and Chars are not allowed. Please enter a decimal number and try again.");
+		return ReadPositiveDecimalNumber(Message);
+	}
+
+	return stod(DecimalNumber);
+}

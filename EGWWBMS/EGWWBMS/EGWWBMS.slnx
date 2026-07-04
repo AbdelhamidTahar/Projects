@@ -1,0 +1,7 @@
+<Solution>
+  <Configurations>
+    <Platform Name="x64" />
+    <Platform Name="x86" />
+  </Configurations>
+  <Project Path="EGWWBMS/EGWWBMS.vcxproj" Id="d03ea0eb-215d-422d-bed6-0e3a79297baa" />
+</Solution>
