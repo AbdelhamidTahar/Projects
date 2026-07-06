@@ -13,6 +13,7 @@ bool Validations::IsHasSymbol(const string& Input)
 	return false;
 
 }
+
 bool Validations::IsHasDigit(const string& Input)
 {
 	for (const char& Character : Input)
@@ -23,6 +24,7 @@ bool Validations::IsHasDigit(const string& Input)
 	return false;
 
 }
+
 bool Validations::IsHasChar(const string& Input)
 {
 	for (const char& Character : Input)
@@ -33,6 +35,7 @@ bool Validations::IsHasChar(const string& Input)
 	return false;
 
 }
+
 bool Validations::IsDecimalNumberValidat(const string& Input)
 {
 	if (Validations::IsHasChar(Input))
@@ -41,7 +44,7 @@ bool Validations::IsDecimalNumberValidat(const string& Input)
 	}
 
 	vector<string>StringIntoParts;
-	StringIntoParts = InputOperations::SplitStringIntoPartsUsingSeparator(Input);
+	StringIntoParts = InputOperations::SplitStringIntoTwoParts(Input);
 
 	if (StringIntoParts.empty())
 	{
@@ -53,12 +56,11 @@ bool Validations::IsDecimalNumberValidat(const string& Input)
 
 	return true;
 }
+
 bool Validations::IsIDValidat(const string& ID)
 {
 	return !IsHasSymbol(ID);
 }
-
-
 
 string Reads::ReadID(const string& Message)
 {
@@ -68,12 +70,12 @@ string Reads::ReadID(const string& Message)
 
 	if (!Validations::IsIDValidat(ID))
 	{
-		Messages::PrintErrorMessage(ID);
+		Messages::PrintErrorMessage
+		("Invalid input. Symbols are not allowed. Please enter a ID and try again.\n");
 		return ReadID(Message);
 	}
 	return ID;
 }
-
 
 bool Checks::IsVectorOfStringIsEmpty(vector<string>& vStrings)
 {
@@ -90,7 +92,7 @@ void Messages::PrintErrorMessage(const string& ErrorMessage)
 	cout << ErrorMessage;
 }
 
-vector<string> InputOperations::SplitStringIntoPartsUsingSeparator(string Input,const string & Separator)
+vector<string> InputOperations::SplitStringIntoTwoParts(string Input,const string & Separator)
 {
 	vector<string> vPartsOfInput;
 	short Pos = 0;
@@ -116,15 +118,35 @@ double Reads::ReadPositiveDecimalNumber(const string& Message)
 	if (!Validations::IsDecimalNumberValidat(DecimalNumber))
 	{
 		Messages::PrintErrorMessage
-		("Invalid input. Symbols and Chars are not allowed. Please enter a decimal number and try again.");
+		("Invalid input. Symbols and Chars are not allowed. Please enter a decimal number and try again.\n");
 		return ReadPositiveDecimalNumber(Message);
 	}
 	if (stod(DecimalNumber) < 0)
 	{
 		Messages::PrintErrorMessage
-		("Invalid input. Symbols and Chars are not allowed. Please enter a decimal number and try again.");
+		("Invalid input. The value cannot be less than zero. Please try again.\n");
 		return ReadPositiveDecimalNumber(Message);
 	}
 
 	return stod(DecimalNumber);
+}
+
+bool Validations::IsFullNameValidat(const string& FullName)
+{
+	return !(IsHasSymbol(FullName) || IsHasDigit(FullName));
+}
+
+string Reads::ReadFullName(const string& Message)
+{
+	string FullName = "";
+	cout << "Please enter your full name: ";
+	cin >> FullName;
+
+	if (!Validations::IsFullNameValidat(FullName))
+	{
+		Messages::PrintErrorMessage
+		("Invalid input. Symbols and Digits are not allowed. Please enter a Fuul Name and try again.\n");
+		FullName = ReadFullName(Message);
+	}
+	return FullName;
 }

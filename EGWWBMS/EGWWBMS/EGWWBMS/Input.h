@@ -10,7 +10,7 @@ namespace Validations
 	bool IsHasChar(const string& Input);
 	bool IsDecimalNumberValidat(const string& Input);
 	bool IsIDValidat(const string& Input);
-
+	bool IsFullNameValidat(const string& Input);
 	
 }
 
@@ -22,7 +22,7 @@ namespace Checks
 
 namespace InputOperations
 {
-	vector<string> SplitStringIntoPartsUsingSeparator(string Input,const string& Separator = ".");
+	vector<string> SplitStringIntoTwoParts(string Input,const string& Separator = ".");
 }
 
 namespace Reads
@@ -30,6 +30,8 @@ namespace Reads
 	string ReadID(const string& Message);
 
 	double ReadPositiveDecimalNumber(const string& Message);
+
+	string ReadFullName(const string& Message);
 }
 
 namespace Messages
