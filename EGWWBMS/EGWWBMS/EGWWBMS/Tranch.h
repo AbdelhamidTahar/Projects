@@ -13,9 +13,11 @@ struct sTranch
 namespace TrancheOperations
 {
 	sTranch ReadTrancheInfo();
-	sTranch DistributeConsumptionToTranche(double Consumption, sTranch Tranch);
+	sTranch DistributeConsumptionToTranche(double &Consumption, sTranch Tranch);
 	sTranch CalculateTrancheAmount(sTranch Tranch);
-
+	vector <sTranch> GetLastTrancheMaxConsumption(vector <sTranch> vTranchs);
+	short GetLastTrancheIndex(const vector <sTranch>& vTranchs);
+	sTranch GetTrancheMaxConsumption(sTranch Tranch);
 }
 
 
@@ -23,7 +25,8 @@ namespace TranchesOperations
 {
 	vector <sTranch> ReadTranchesInfo();
 	vector <sTranch> DistributeConsumptionToTranches(double Consumption, vector <sTranch> vTranchs);
-	vector <sTranch> CalculateTrancheAmounts(vector <sTranch> vTranchs);
+	vector <sTranch> CalculateTranchesAmounts(vector <sTranch> vTranchs);
+
 }
 
 

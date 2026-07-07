@@ -3,12 +3,12 @@
 using namespace std;
 
 
-namespace Converts
+namespace ConvertsMath
 {
 	double ConvertPercentageToDecimal(const double& Percentage);
 }
 
-namespace Operations
+namespace OperationsMath
 {
 	double Multiply(double firstNumber, double secondNumber);
 }
