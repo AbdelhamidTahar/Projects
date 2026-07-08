@@ -26,7 +26,7 @@ namespace TranchesOperations
 	vector <sTranch> ReadTranchesInfo();
 	vector <sTranch> DistributeConsumptionToTranches(double Consumption, vector <sTranch> vTranchs);
 	vector <sTranch> CalculateTranchesAmounts(vector <sTranch> vTranchs);
-
+	short GetTranchesElementCount(const vector <sTranch> &vTranchs);
 }
 
 

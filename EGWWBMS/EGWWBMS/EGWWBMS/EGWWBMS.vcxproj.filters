@@ -30,6 +30,12 @@
     <ClCompile Include="Tranch.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="TranchesDatacpp.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Taxes.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI.h">
@@ -45,6 +51,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TranchesData.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Taxes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

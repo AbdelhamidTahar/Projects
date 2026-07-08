@@ -100,4 +100,8 @@ vector <sTranch> TranchesOperations::CalculateTranchesAmounts(vector <sTranch> v
 }
 
 
+short TranchesOperations::GetTranchesElementCount(const vector <sTranch>& vTranchs)
+{
+	return vTranchs.size();
+}
 

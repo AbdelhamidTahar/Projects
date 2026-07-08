@@ -1,5 +1,6 @@
 #include <iostream>
 #include <string>
+#include <cctype>
 #include "Input.h"
 using namespace std;
 
@@ -46,6 +47,7 @@ bool Validations::IsDecimalNumberValidat(const string& Input)
 	vector<string>StringIntoParts;
 	StringIntoParts = InputOperations::SplitStringIntoTwoParts(Input);
 
+	//not found dot (.).
 	if (StringIntoParts.empty())
 	{
 		return !IsHasSymbol(Input);
@@ -84,7 +86,7 @@ bool Checks::IsVectorOfStringIsEmpty(vector<string>& vStrings)
 
 bool Checks::IsStringEmpty(const string& Text)
 {
-	return (Text.length() != 0 ? false : true);
+	return (Text.length() == 0 ? true : false);
 }
 
 void Messages::PrintErrorMessage(const string& ErrorMessage)
@@ -115,12 +117,21 @@ double Reads::ReadPositiveDecimalNumber(const string& Message)
 	string DecimalNumber = "";
 	cout << Message;
 	cin >> DecimalNumber;
+
+	if (Checks::IsStringEmpty(DecimalNumber))
+	{
+		Messages::PrintErrorMessage
+		("Invalid input. Null are not allowed. Please enter a decimal number and try again.\n");
+		return ReadPositiveDecimalNumber(Message);
+	}
+
 	if (!Validations::IsDecimalNumberValidat(DecimalNumber))
 	{
 		Messages::PrintErrorMessage
 		("Invalid input. Symbols and Chars are not allowed. Please enter a decimal number and try again.\n");
 		return ReadPositiveDecimalNumber(Message);
 	}
+
 	if (stod(DecimalNumber) < 0)
 	{
 		Messages::PrintErrorMessage

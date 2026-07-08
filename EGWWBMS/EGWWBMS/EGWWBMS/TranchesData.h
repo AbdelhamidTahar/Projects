@@ -13,6 +13,7 @@ struct TranchesData
 namespace TranchesDataOperations
 {
 	double CalculateTotalTrancheAmountFromTo
-	(const short& startTrancheIndex, const short& endTrancheIndex, const vector <sTranch>& vTrTranchsan);
+	(const short& From,  short To, const vector <sTranch>& vTrTranchsan);
+
 
 } 
