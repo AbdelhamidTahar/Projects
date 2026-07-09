@@ -1,7 +1,7 @@
 #pragma once
 #include "Tranch.h"
 
-struct TranchesData
+struct sTranchesData
 {
 	vector<sTranch> vTranches;
 	//trache 1 and 2.
