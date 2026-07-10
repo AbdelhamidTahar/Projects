@@ -145,9 +145,10 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MAth.cpp" />
     <ClCompile Include="Taxes.cpp" />
-    <ClCompile Include="Tranch.cpp" />
-    <ClCompile Include="TranchDataFile.cpp" />
+    <ClCompile Include="Tranche.cpp" />
+    <ClCompile Include="TrancheDataFile.cpp" />
     <ClCompile Include="TranchesDatacpp.cpp" />
+    <ClCompile Include="TranchesDataFilecpp.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -156,8 +157,8 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Taxes.h" />
-    <ClInclude Include="Tranch.h" />
-    <ClInclude Include="TranchDataFile.h" />
+    <ClInclude Include="Tranche.h" />
+    <ClInclude Include="TrancheDataFile.h" />
     <ClInclude Include="TranchesData.h" />
     <ClInclude Include="TranchesDataFile.h" />
     <ClInclude Include="UI.h" />

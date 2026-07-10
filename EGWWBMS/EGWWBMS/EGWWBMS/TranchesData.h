@@ -1,9 +1,9 @@
 #pragma once
-#include "Tranch.h"
+#include "Tranche.h"
 
 struct sTranchesData
 {
-	vector<sTranch> vTranches;
+	vector<sTranche> vTranches;
 	//trache 1 and 2.
 	double PrimaryTranchesTotalAmount = 0;
 	//Secondary tranches (Tranches 3 and above).
@@ -13,7 +13,7 @@ struct sTranchesData
 namespace TranchesDataOperations
 {
 	double CalculateTotalTrancheAmountFromTo
-	(const short& From,  short To, const vector <sTranch>& vTrTranchsan);
+	(const short& From,  short To, const vector <sTranche>& vTrTranchsan);
 
 
 } 

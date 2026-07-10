@@ -1,12 +1,12 @@
 #include <iostream>
 #include <string>
-#include "TranchDataFile.h"
+#include "TrancheDataFile.h"
 using namespace std;
 
 
 string TrancheDataOperations::convertTrancheStructToStringLine
 (
-	const sTranch& Tranch,
+	const sTranche& Tranch,
 	const string& StartMarker ,
 	const string& EndMarker ,
 	const string& Separator 
@@ -23,9 +23,9 @@ string TrancheDataOperations::convertTrancheStructToStringLine
 	return TrancheLine;
 }
 
-string TrancheسDataOperations::convertTrancheStructToStringLine
+string TranchesDataOperations::convertTranchesStructToStringLine
 (
-	const vector <sTranch>& vTranchs,
+	const vector <sTranche>& vTranchs,
 	const string& StartMarker,
 	const string& EndMarker ,
 	const string& Separator 
@@ -33,7 +33,7 @@ string TrancheسDataOperations::convertTrancheStructToStringLine
 {
 	string TranchsLine = "";
 	TranchsLine += StartMarker;
-	for (const sTranch& Tranch : vTranchs)
+	for (const sTranche& Tranch : vTranchs)
 		TranchsLine += TrancheDataOperations::convertTrancheStructToStringLine(Tranch);
 	TranchsLine += EndMarker;
 

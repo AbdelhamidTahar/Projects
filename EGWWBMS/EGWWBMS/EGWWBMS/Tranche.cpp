@@ -1,11 +1,11 @@
-#include "Tranch.h"
+#include "Tranche.h"
 #include "Input.h"
 #include "Math.h"
 
 
-sTranch TrancheOperations::ReadTrancheInfo()
+sTranche TrancheOperations::ReadTrancheInfo()
 {
-	sTranch Tranch;
+	sTranche Tranch;
 	Tranch.MaximumTrancheConsumption =
 		Reads::ReadPositiveDecimalNumber("Enter maximum consumption for the tranche: ");
 
@@ -15,7 +15,7 @@ sTranch TrancheOperations::ReadTrancheInfo()
 	return Tranch;
 }
 
-sTranch TrancheOperations::DistributeConsumptionToTranche(double &Consumption, sTranch Tranch)
+sTranche TrancheOperations::DistributeConsumptionToTranche(double &Consumption, sTranche Tranch)
 {
 	if (Consumption >= Tranch.MaximumTrancheConsumption)
 	{
@@ -31,7 +31,7 @@ sTranch TrancheOperations::DistributeConsumptionToTranche(double &Consumption, s
 	return Tranch;
 }
 
-sTranch TrancheOperations::CalculateTrancheAmount(sTranch Tranch)
+sTranche TrancheOperations::CalculateTrancheAmount(sTranche Tranch)
 {
 	Tranch.TrancheAmount 
 		= OperationsMath::Multiply(Tranch.TrancheConsumption, Tranch.TrancheUnitPrice);
@@ -39,18 +39,18 @@ sTranch TrancheOperations::CalculateTrancheAmount(sTranch Tranch)
 	return Tranch;
 }
 
-short TrancheOperations::GetLastTrancheIndex(const vector <sTranch>& vTranchs)
+short TrancheOperations::GetLastTrancheIndex(const vector <sTranche>& vTranchs)
 {
 	return vTranchs.size();
 }
 
-sTranch TrancheOperations::GetTrancheMaxConsumption(sTranch Tranch)
+sTranche TrancheOperations::GetTrancheMaxConsumption(sTranche Tranch)
 {
 	Tranch.MaximumTrancheConsumption = std::numeric_limits<double>::max();
 	return Tranch;
 }
 
-vector <sTranch> TrancheOperations::GetLastTrancheMaxConsumption(vector <sTranch> vTranchs)
+vector <sTranche> TrancheOperations::GetLastTrancheMaxConsumption(vector <sTranche> vTranchs)
 {
 	short LastTrancheIndex = GetLastTrancheIndex(vTranchs);
 	vTranchs[LastTrancheIndex] = GetTrancheMaxConsumption(vTranchs[LastTrancheIndex]);
@@ -61,10 +61,10 @@ vector <sTranch> TrancheOperations::GetLastTrancheMaxConsumption(vector <sTranch
 
 
 
-vector <sTranch> TranchesOperations::ReadTranchesInfo()
+vector <sTranche> TranchesOperations::ReadTranchesInfo()
 {
-	sTranch Tranch;
-	vector <sTranch> vTranchesInfo;
+	sTranche Tranch;
+	vector <sTranche> vTranchesInfo;
 	short Count = 1;
 	char AnswerReadMoreTranch = 'Y';
 
@@ -83,24 +83,24 @@ vector <sTranch> TranchesOperations::ReadTranchesInfo()
 	return vTranchesInfo;
 }
 
-vector <sTranch> TranchesOperations::DistributeConsumptionToTranches
-    (double Consumption, vector <sTranch> vTranchs)
+vector <sTranche> TranchesOperations::DistributeConsumptionToTranches
+    (double Consumption, vector <sTranche> vTranchs)
 {
-	for (sTranch& Tranch : vTranchs)
+	for (sTranche& Tranch : vTranchs)
 		Tranch = TrancheOperations::DistributeConsumptionToTranche(Consumption, Tranch);
 	return vTranchs;
 }
 
-vector <sTranch> TranchesOperations::CalculateTranchesAmounts(vector <sTranch> vTranchs)
+vector <sTranche> TranchesOperations::CalculateTranchesAmounts(vector <sTranche> vTranchs)
 {
 	
-	for (sTranch& Tranch : vTranchs)
+	for (sTranche& Tranch : vTranchs)
 		Tranch = TrancheOperations::CalculateTrancheAmount(Tranch);
 	return vTranchs;
 }
 
 
-short TranchesOperations::GetTranchesElementCount(const vector <sTranch>& vTranchs)
+short TranchesOperations::GetTranchesElementCount(const vector <sTranche>& vTranchs)
 {
 	return vTranchs.size();
 }
