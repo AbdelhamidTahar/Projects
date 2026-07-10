@@ -140,19 +140,26 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="EGWWBMS.cpp" />
+    <ClCompile Include="ElectricityAndGasDataManager.cpp" />
+    <ClCompile Include="GlobalElectricityAndGas.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MAth.cpp" />
     <ClCompile Include="Taxes.cpp" />
     <ClCompile Include="Tranch.cpp" />
+    <ClCompile Include="TranchDataFile.cpp" />
     <ClCompile Include="TranchesDatacpp.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ElectricityAndGasDataManager.h" />
+    <ClInclude Include="GlobalElectricityAndGas.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Taxes.h" />
     <ClInclude Include="Tranch.h" />
+    <ClInclude Include="TranchDataFile.h" />
     <ClInclude Include="TranchesData.h" />
+    <ClInclude Include="TranchesDataFile.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
