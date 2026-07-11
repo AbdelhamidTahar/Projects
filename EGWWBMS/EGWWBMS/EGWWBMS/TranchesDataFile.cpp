@@ -20,4 +20,6 @@ string TranchesDataOperations::convertTranchesDataStructToStringLine
 	TranchesDataLine += to_string(TranchesData.SecondaryTranchesTotalAmount) ;
 	TranchesDataLine += EndMarker;
 
+
+	return TranchesDataLine;
 }

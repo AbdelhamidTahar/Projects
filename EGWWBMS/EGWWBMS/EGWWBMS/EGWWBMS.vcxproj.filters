@@ -27,12 +27,6 @@
     <ClCompile Include="MAth.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Tranch.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="TranchesDatacpp.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Taxes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -42,7 +36,28 @@
     <ClCompile Include="ElectricityAndGasDataManager.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="TranchDataFile.cpp">
+    <ClCompile Include="Tranche.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TrancheDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TranchesDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TranchesData.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GlobalElectricityAndGasDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ClientDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="TaxesDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ElectricityAndGasBillDataFilecpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -56,9 +71,6 @@
     <ClInclude Include="Math.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="Tranch.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TranchesData.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -68,13 +80,31 @@
     <ClInclude Include="GlobalElectricityAndGas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ElectricityAndGasDataManager.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="TranchDataFile.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="TranchesDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Tranche.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TrancheDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Client.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalElectricityAndGasDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ClientDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="TaxesDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ElectricityAndGasBill.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ElectricityAndGasBillDataFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

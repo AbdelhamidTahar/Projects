@@ -9,7 +9,7 @@ namespace TranchesDataOperations
 	string convertTranchesDataStructToStringLine
 	   (
 		const sTranchesData& TranchesData,
-		const string& StartMarker = "StartTTranchesData",
+		const string& StartMarker = "StartTranchesData",
 		const string& EndMarker = "EndTranchesData",
 		const string& Separator = "//#//"
 	   );

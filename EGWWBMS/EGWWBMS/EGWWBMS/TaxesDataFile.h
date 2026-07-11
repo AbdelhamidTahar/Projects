@@ -1,0 +1,16 @@
+#pragma once
+#include <iostream>
+#include "Taxes.h"
+using namespace std;
+
+namespace TaxesDataOperations
+{
+	string ConvertTaxesDataStructToStringLine
+	(
+		const sTaxes& Taxes,
+		const string& StartMarker = "StartTaxes",
+		const string& EndMarker = "EndTaxes",
+		const string& Separator = "//#//"
+	);
+}
+
