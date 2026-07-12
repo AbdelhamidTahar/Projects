@@ -60,6 +60,9 @@
     <ClCompile Include="ElectricityAndGasBillDataFilecpp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GlobalDataFile.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI.h">
@@ -105,6 +108,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ElectricityAndGasBillDataFile.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GlobalDataFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

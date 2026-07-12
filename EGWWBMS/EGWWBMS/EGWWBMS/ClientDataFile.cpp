@@ -16,4 +16,6 @@ string ClientDataOperations::ConvertClientDataStructToStringLine
 	ClientLine += Client.ID + Separator;
 	ClientLine += Client.FullName;
 	ClientLine += EndMarker;
+
+	return ClientLine;
 }

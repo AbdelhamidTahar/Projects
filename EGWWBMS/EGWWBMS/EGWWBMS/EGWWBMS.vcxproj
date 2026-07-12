@@ -143,6 +143,7 @@
     <ClCompile Include="EGWWBMS.cpp" />
     <ClCompile Include="ElectricityAndGasBillDataFilecpp.cpp" />
     <ClCompile Include="ElectricityAndGasDataManager.cpp" />
+    <ClCompile Include="GlobalDataFile.cpp" />
     <ClCompile Include="GlobalElectricityAndGas.cpp" />
     <ClCompile Include="GlobalElectricityAndGasDataFile.cpp" />
     <ClCompile Include="Input.cpp" />
@@ -160,6 +161,7 @@
     <ClInclude Include="ClientDataFile.h" />
     <ClInclude Include="ElectricityAndGasBill.h" />
     <ClInclude Include="ElectricityAndGasBillDataFile.h" />
+    <ClInclude Include="GlobalDataFile.h" />
     <ClInclude Include="GlobalElectricityAndGas.h" />
     <ClInclude Include="GlobalElectricityAndGasDataFile.h" />
     <ClInclude Include="Input.h" />
