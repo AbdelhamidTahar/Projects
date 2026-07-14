@@ -10,7 +10,7 @@ using namespace std;
 string ElectricityAndGasBillDataOperations::ConvertElectricityAndGasBillDataStructToStringLine
 (
 	const sElectricityAndGasBill& ElectricityAndGasBill,
-	const string& Separator = "//#//"
+	const string& Separator 
 )
 {
 	string ElectricityAndGasBillLine = "";

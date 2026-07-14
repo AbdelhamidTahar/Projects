@@ -16,9 +16,16 @@ namespace GlobalOperations
 		 string Text, const string& StartMarker = "", const string& EndMarker = ""
 	);
 
-	string DeleteStartMarkerTAndndMarker
+	string DeleteMarker
+	(
+		string Text, const string& Marker =""
+	);
+
+	string DeleteStartMarkerTAndEndMarker
 	(
 		string Text, const string& StartMarker = "", const string& EndMarker = ""
 	);
+
+
 
 }

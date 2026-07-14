@@ -23,6 +23,7 @@ namespace Checks
 namespace InputOperations
 {
 	vector<string> SplitStringIntoTwoParts(string Input,const string& Separator = ".");
+	vector<string> SplitStringWithSeparator (string Text, const string& Separator = "//#//");
 }
 
 namespace Reads

@@ -7,9 +7,9 @@ using namespace std;
 string ElectricityOrGasBillDataOperations::ConvertElectricityOrGasDataStructToStringLine
 (
 	const sElectricityOrGasBil& ElectricityOrGasBil,
-	const string& StartMarker = "",
-	const string& EndMarker = "",
-	const string& Separator = "//#//"
+	const string& StartMarker ,
+	const string& EndMarker ,
+	const string& Separator 
 )
 {
 	string ElectricityOrGasLine = "";

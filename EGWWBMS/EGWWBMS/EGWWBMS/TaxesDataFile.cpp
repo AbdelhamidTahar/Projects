@@ -7,9 +7,9 @@ using namespace std;
 string TaxesDataOperations::ConvertTaxesDataStructToStringLine
 (
 	const sTaxes& Taxes,
-	const string& StartMarker = "StartTaxes",
-	const string& EndMarker = "EndTaxes",
-	const string& Separator = "//#//"
+	const string& StartMarker,
+	const string& EndMarker ,
+	const string& Separator 
 )
 {
 	string TaxesLine = "";

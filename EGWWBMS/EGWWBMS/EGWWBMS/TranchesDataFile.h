@@ -13,6 +13,17 @@ namespace TranchesDataOperations
 		const string& EndMarker = "EndTranchesData",
 		const string& Separator = "//#//"
 	   );
+
+	sTranchesData ConvertVectorsToTranchesDataStruct
+	   (const vector<sTranche> &vTranches, const vector<string> &vRemainingData) ;
+
+	sTranchesData ConvertTranchesDataStringLineToDataStruct
+	(
+	    string TranchesStringData,
+		const string& StartMarker = "StartTranchesData",
+		const string& EndMarker = "EndTranchesData",
+		const string& Separator = "//#//"
+	);
 }
 
 

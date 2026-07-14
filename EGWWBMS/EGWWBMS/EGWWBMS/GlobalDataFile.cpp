@@ -5,9 +5,9 @@
 using namespace std;
 
 
-string GetTextFromStartMarkerToEndMarker
+string GlobalOperations::GetTextFromStartMarkerToEndMarker
 (
-	string Text, const string& StartMarker = "", const string& EndMarker = ""
+	string Text, const string& StartMarker , const string& EndMarker 
 )
 {
 	int PosStartMarker = Text.find(StartMarker);
@@ -19,9 +19,9 @@ string GetTextFromStartMarkerToEndMarker
 }
 
 
-string DeleteTextFromStartMarkerToEndMarker
+string GlobalOperations::DeleteTextFromStartMarkerToEndMarker
 (
-	string Text, const string& StartMarker = "", const string& EndMarker = ""
+	string Text, const string& StartMarker , const string& EndMarker 
 )
 {
 	int PosStartMarker = Text.find(StartMarker);
@@ -32,9 +32,9 @@ string DeleteTextFromStartMarkerToEndMarker
 	return Text;
 }
 
-string DeleteMarker
+string GlobalOperations::DeleteMarker
 (
-	string Text, const string& Marker = ""
+	string Text, const string& Marker 
 )
 {
 	int PosStartMarker = Text.find(Marker);
@@ -44,9 +44,9 @@ string DeleteMarker
 }
 
 
-string DeleteStartMarkerTAndndMarker
+string GlobalOperations::DeleteStartMarkerTAndEndMarker
 (
-	string Text, const string& StartMarker = "", const string& EndMarker = ""
+	string Text, const string& StartMarker , const string& EndMarker 
 )
 {
 	

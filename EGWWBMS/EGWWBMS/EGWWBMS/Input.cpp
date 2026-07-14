@@ -99,9 +99,9 @@ vector<string> InputOperations::SplitStringIntoTwoParts(string Input,const strin
 	vector<string> vPartsOfInput;
 	short Pos = 0;
 
-	if (Pos = Input.find(Separator) != std::string::npos)
+	if ((Pos = Input.find(Separator)) != std::string::npos)
 	{
-		while (Pos = Input.find(Separator) != std::string::npos)
+		while ((Pos = Input.find(Separator)) != std::string::npos)
 		{
 			vPartsOfInput.push_back(Input.substr(0, Pos));
 			Input = Input.erase(0, Pos + Separator.length());
@@ -160,4 +160,23 @@ string Reads::ReadFullName(const string& Message)
 		FullName = ReadFullName(Message);
 	}
 	return FullName;
+}
+
+vector<string> InputOperations::SplitStringWithSeparator(string Text, const string& Separator )
+{
+	vector<string> vString;
+	string RemainingString = "";
+	int SeparatorPos = 0;
+
+	while ((SeparatorPos = Text.find(Separator)) != std::string::npos)
+	{
+		RemainingString = Text.substr(0, SeparatorPos);
+		vString.push_back(RemainingString);
+		Text.erase(0, SeparatorPos + Separator.length());
+	}
+
+	if (!Checks::IsStringEmpty(Text))
+		vString.push_back(Text);
+
+	return vString;
 }
