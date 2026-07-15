@@ -11,4 +11,11 @@ namespace ElectricityAndGasBillDataOperations
 		const sElectricityAndGasBill& ElectricityAndGasBill,
 		const string& Separator = "//#//"
 	);
+
+
+	sElectricityAndGasBill ConvertElectricityAndGasBillStringLineToDataStruct
+	(
+		const sElectricityAndGasBill& ElectricityAndGasBill,
+		const string& Separator = "//#//"
+	);
 }

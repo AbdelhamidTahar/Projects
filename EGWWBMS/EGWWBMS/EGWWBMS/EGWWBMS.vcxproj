@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Debug|Win32">
@@ -141,8 +141,9 @@
   <ItemGroup>
     <ClCompile Include="ClientDataFile.cpp" />
     <ClCompile Include="EGWWBMS.cpp" />
-    <ClCompile Include="ElectricityAndGasBillDataFilecpp.cpp" />
-    <ClCompile Include="ElectricityAndGasDataManager.cpp" />
+    <ClCompile Include="ElectricityAndGasBillDataFile.cpp" />
+    <ClCompile Include="ElectricityDataFile.cpp" />
+    <ClCompile Include="GasDataFile.cpp" />
     <ClCompile Include="GlobalDataFile.cpp" />
     <ClCompile Include="GlobalElectricityAndGas.cpp" />
     <ClCompile Include="GlobalElectricityAndGasDataFile.cpp" />
@@ -161,6 +162,8 @@
     <ClInclude Include="ClientDataFile.h" />
     <ClInclude Include="ElectricityAndGasBill.h" />
     <ClInclude Include="ElectricityAndGasBillDataFile.h" />
+    <ClInclude Include="ElectricityDataFile.h" />
+    <ClInclude Include="GasDataFile.h" />
     <ClInclude Include="GlobalDataFile.h" />
     <ClInclude Include="GlobalElectricityAndGas.h" />
     <ClInclude Include="GlobalElectricityAndGasDataFile.h" />

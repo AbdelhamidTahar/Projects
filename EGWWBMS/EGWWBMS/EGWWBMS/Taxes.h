@@ -1,5 +1,6 @@
 #pragma once
 #include "TranchesData.h"
+
 struct sTaxes
 {
 	double FixedCharges         = 0;

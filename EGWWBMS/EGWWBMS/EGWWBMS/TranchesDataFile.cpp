@@ -17,10 +17,13 @@ string TranchesDataOperations::convertTranchesDataStructToStringLine
 )
 {
 	string TranchesDataLine = "";
+
 	TranchesDataLine += StartMarker;
+
 	TranchesDataLine += TranchesDataOperations::convertTranchesStructToStringLine(TranchesData.vTranches);
 	TranchesDataLine += to_string(TranchesData.PrimaryTranchesTotalAmount) + Separator;
 	TranchesDataLine += to_string(TranchesData.SecondaryTranchesTotalAmount) ;
+
 	TranchesDataLine += EndMarker;
 
 
@@ -60,7 +63,7 @@ sTranchesData TranchesDataOperations::ConvertTranchesDataStringLineToDataStruct
 	  (TranchesDataString, "StartTranches", "EndTranches");
 
 	vTranches = TranchesDataOperations::ConvertTranchesStringLineToStructs
-	  (Tranches, "StartTranche", "EndTranche");
+	  (Tranches, "StartTranches", "EndTranches");
 
 	TranchesDataString = GlobalOperations::DeleteTextFromStartMarkerToEndMarker
 	(TranchesDataString, "StartTranches", "EndTranches");
