@@ -2,7 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Client.h"
-#include "GlobalElectricityAndGas.h"
+#include "GlobalElectricityOrGas.h"
 #include "Taxes.h"
 
 using namespace std;

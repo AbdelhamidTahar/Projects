@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include "Input.h"
+#include "GlobalDataFile.h"
 #include "ElectricityAndGasBillDataFile.h"
 #include "ClientDataFile.h"
 #include "ElectricityDataFile.h"
@@ -49,12 +51,74 @@ string ElectricityAndGasBillDataOperations::ConvertElectricityAndGasBillDataStru
 }
 
 
+sElectricityAndGasBill ElectricityAndGasBillDataOperations::ConvertVectorElectricityAndGasBillDataStringToElectricityAndGasBill
+(const vector<string>& ElectricityAndGasBillData, sElectricityAndGasBill ElectricityAndGasBill)
+{
+	
+
+	ElectricityAndGasBill.ID = ElectricityAndGasBillData[0];
+	ElectricityAndGasBill.AmountWithoutTaxes = stod(ElectricityAndGasBillData[1]);
+	ElectricityAndGasBill.AmountWithTaxes = stod(ElectricityAndGasBillData[2]);
+	ElectricityAndGasBill.StampPercentage = stod(ElectricityAndGasBillData[3]);
+	ElectricityAndGasBill.StampAmount = stod(ElectricityAndGasBillData[4]);
+	ElectricityAndGasBill.TotalAmountDueCash = stod(ElectricityAndGasBillData[5]);
+
+	return ElectricityAndGasBill;
+}
+
+
+
 sElectricityAndGasBill ElectricityAndGasBillDataOperations::ConvertElectricityAndGasBillStringLineToDataStruct
 (
-	const sElectricityAndGasBill& ElectricityAndGasBill,
+    string ElectricityAndGasBillLine,
 	const string& Separator 
 )
 {
+	sElectricityAndGasBill ElectricityAndGasBill;
+	string TextData = "";
+
+
+	TextData = GlobalOperations::GetTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "StartClient", "EndClient");
+	ElectricityAndGasBill.Client = ClientDataOperations::ConvertClientStringLineToDataStruct(TextData);
+	ElectricityAndGasBillLine = GlobalOperations::DeleteTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "StartClient", "EndClient");
+
+
+
+
+	TextData = GlobalOperations::GetTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "SatrtElectricityBill", "EndElectricityBill");
+	ElectricityAndGasBill.ElectricityBill = ElectricityBillDataOperations::ConvertElectricityBillStringLineToDataStruct
+	(TextData);
+	ElectricityAndGasBillLine = GlobalOperations::DeleteTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "SatrtElectricityBill", "EndElectricityBill");
+
+
+
+	TextData = GlobalOperations::GetTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "SatrtGasBill", "EndGasBill");
+	ElectricityAndGasBill.GasBill = GasBillDataOperations::ConvertGasBillStringLineToDataStruct
+	(TextData);
+	ElectricityAndGasBillLine = GlobalOperations::DeleteTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "SatrtGasBill", "EndGasBill");
+
+
+	
+	TextData = GlobalOperations::GetTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "StartTaxes", "EndTaxes");
+	ElectricityAndGasBill.Taxes = TaxesDataOperations::ConvertTaxesStringLineToDataStruct
+	(TextData);
+	ElectricityAndGasBillLine = GlobalOperations::DeleteTextFromStartMarkerToEndMarker
+	(ElectricityAndGasBillLine, "StartTaxes", "EndTaxes");
+
+
+	vector<string>ElectricityAndGasBillData;
+	ElectricityAndGasBillData = InputOperations::SplitStringWithSeparator(ElectricityAndGasBillLine);
+	ElectricityAndGasBill = ConvertVectorElectricityAndGasBillDataStringToElectricityAndGasBill
+	(ElectricityAndGasBillData, ElectricityAndGasBill);
+
+	
 
 	return ElectricityAndGasBill;
 }

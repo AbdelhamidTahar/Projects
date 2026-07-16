@@ -4,7 +4,7 @@
 #include "Input.h"
 #include "GlobalDataFile.h"
 #include "TranchesDataFile.h"
-#include "GlobalElectricityAndGasDataFile.h"
+#include "GlobalElectricityOrGasDataFile.h"
 using namespace std;
 
 string ElectricityOrGasBillDataOperations::ConvertElectricityOrGasDataStructToStringLine

@@ -145,8 +145,8 @@
     <ClCompile Include="ElectricityDataFile.cpp" />
     <ClCompile Include="GasDataFile.cpp" />
     <ClCompile Include="GlobalDataFile.cpp" />
-    <ClCompile Include="GlobalElectricityAndGas.cpp" />
-    <ClCompile Include="GlobalElectricityAndGasDataFile.cpp" />
+    <ClCompile Include="GlobalElectricityOrGas.cpp" />
+    <ClCompile Include="GlobalElectricityOrGasDataFile.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MAth.cpp" />
     <ClCompile Include="Taxes.cpp" />
@@ -165,8 +165,8 @@
     <ClInclude Include="ElectricityDataFile.h" />
     <ClInclude Include="GasDataFile.h" />
     <ClInclude Include="GlobalDataFile.h" />
-    <ClInclude Include="GlobalElectricityAndGas.h" />
-    <ClInclude Include="GlobalElectricityAndGasDataFile.h" />
+    <ClInclude Include="GlobalElectricityOrGas.h" />
+    <ClInclude Include="GlobalElectricityOrGasDataFile.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Taxes.h" />

@@ -30,7 +30,7 @@
     <ClCompile Include="Taxes.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalElectricityAndGas.cpp">
+    <ClCompile Include="GlobalElectricityOrGas.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Tranche.cpp">
@@ -45,7 +45,7 @@
     <ClCompile Include="TranchesData.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="GlobalElectricityAndGasDataFile.cpp">
+    <ClCompile Include="GlobalElectricityOrGasDataFile.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="ClientDataFile.cpp">
@@ -83,7 +83,7 @@
     <ClInclude Include="Taxes.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalElectricityAndGas.h">
+    <ClInclude Include="GlobalElectricityOrGas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="TranchesDataFile.h">
@@ -98,7 +98,7 @@
     <ClInclude Include="Client.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="GlobalElectricityAndGasDataFile.h">
+    <ClInclude Include="GlobalElectricityOrGasDataFile.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="ClientDataFile.h">

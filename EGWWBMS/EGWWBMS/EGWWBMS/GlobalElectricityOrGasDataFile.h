@@ -1,7 +1,7 @@
 #pragma once
 #include <iostream>
 #include <string>
-#include "GlobalElectricityAndGas.h"
+#include "GlobalElectricityOrGas.h"
 using namespace std;
 
 

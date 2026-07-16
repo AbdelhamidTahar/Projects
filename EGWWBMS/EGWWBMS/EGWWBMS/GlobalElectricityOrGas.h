@@ -15,3 +15,4 @@ struct sElectricityOrGasBil
 	double Consumption = 0;
 	double ConsumptionAmount = 0;
 };
+
