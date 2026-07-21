@@ -1,5 +1,7 @@
 #include <iostream>
 #include <string>
+#include <fstream>
+#include <vector>
 #include "Input.h"
 #include "GlobalDataFile.h"
 #include "ElectricityAndGasBillDataFile.h"
@@ -122,3 +124,30 @@ sElectricityAndGasBill ElectricityAndGasBillDataOperations::ConvertElectricityAn
 
 	return ElectricityAndGasBill;
 }
+
+
+vector<sElectricityAndGasBill> ElectricityAndGasBillDataOperations::LoadAllElectricityAndGasBills
+(const string &FileName)
+{
+	vector<sElectricityAndGasBill>vElectricityAndGasBills;
+	fstream ElectricityAndGasBillsFile;
+
+	ElectricityAndGasBillsFile.open(FileName, ios::in);
+
+	if (ElectricityAndGasBillsFile.is_open())
+	{
+		string Line = "";
+		sElectricityAndGasBill ElectricityAndGasBill;
+
+		while (getline(ElectricityAndGasBillsFile, Line))
+		{
+			ElectricityAndGasBill = ConvertElectricityAndGasBillStringLineToDataStruct(Line);
+			vElectricityAndGasBills.push_back(ElectricityAndGasBill);
+		}
+
+		ElectricityAndGasBillsFile.close();
+	}
+
+	return vElectricityAndGasBills;
+}
+

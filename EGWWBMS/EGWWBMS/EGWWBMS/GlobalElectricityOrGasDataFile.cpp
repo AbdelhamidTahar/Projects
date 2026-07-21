@@ -3,7 +3,9 @@
 #include <string>
 #include "Input.h"
 #include "GlobalDataFile.h"
+#include "ClientDataFile.h"
 #include "TranchesDataFile.h"
+#include "ElectricityAndGasBillDataFile.h"
 #include "GlobalElectricityOrGasDataFile.h"
 using namespace std;
 
@@ -85,4 +87,28 @@ sElectricityOrGasBil ElectricityOrGasBillDataOperations::ConvertElectricityOrGas
 
 
 	return ElectricityOrGasBil;
+}
+
+double ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
+( const string& ClientID, const string& FileName, eOldIndexes OldElectricityOrGasIndex)
+
+
+{
+	vector< sElectricityAndGasBill> vElectricityAndGasBills;
+	vElectricityAndGasBills = ElectricityAndGasBillDataOperations::LoadAllElectricityAndGasBills(FileName);
+	sElectricityAndGasBill LastElectricityAndGasBillByClient;
+
+	if (
+		ClientDataOperations::FindLastElectricityAndGasBillByClientID
+		(ClientID, vElectricityAndGasBills, LastElectricityAndGasBillByClient)
+		)
+	{
+		return (OldElectricityOrGasIndex == eOldIndexes::OldElectricityIndex) ?
+			(LastElectricityAndGasBillByClient.ElectricityBill.NewIndex) :
+			(LastElectricityAndGasBillByClient.GasBill.NewIndex);
+	}
+
+
+
+	return 0;
 }

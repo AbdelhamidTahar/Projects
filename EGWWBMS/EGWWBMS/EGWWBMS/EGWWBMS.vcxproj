@@ -143,9 +143,9 @@
     <ClCompile Include="EGWWBMS.cpp" />
     <ClCompile Include="ElectricityAndGasBillDataFile.cpp" />
     <ClCompile Include="ElectricityDataFile.cpp" />
+    <ClCompile Include="ElectricityOrGasBilProgram.cpp" />
     <ClCompile Include="GasDataFile.cpp" />
     <ClCompile Include="GlobalDataFile.cpp" />
-    <ClCompile Include="GlobalElectricityOrGas.cpp" />
     <ClCompile Include="GlobalElectricityOrGasDataFile.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MAth.cpp" />
@@ -155,6 +155,7 @@
     <ClCompile Include="TrancheDataFile.cpp" />
     <ClCompile Include="TranchesData.cpp" />
     <ClCompile Include="TranchesDataFile.cpp" />
+    <ClCompile Include="TranchesDataProgram.cpp" />
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -163,6 +164,7 @@
     <ClInclude Include="ElectricityAndGasBill.h" />
     <ClInclude Include="ElectricityAndGasBillDataFile.h" />
     <ClInclude Include="ElectricityDataFile.h" />
+    <ClInclude Include="ElectricityOrGasBilProgram.h" />
     <ClInclude Include="GasDataFile.h" />
     <ClInclude Include="GlobalDataFile.h" />
     <ClInclude Include="GlobalElectricityOrGas.h" />
@@ -175,6 +177,7 @@
     <ClInclude Include="TrancheDataFile.h" />
     <ClInclude Include="TranchesData.h" />
     <ClInclude Include="TranchesDataFile.h" />
+    <ClInclude Include="TranchesDataProgram.h" />
     <ClInclude Include="UI.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

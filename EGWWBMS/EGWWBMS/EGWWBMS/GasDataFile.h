@@ -1,5 +1,5 @@
 #pragma once
-#include "GlobalElectricityAndGasDataFile.h"
+#include "GlobalElectricityOrGasDataFile.h"
 
 
 namespace GasBillDataOperations
@@ -18,5 +18,11 @@ namespace GasBillDataOperations
 		const string& StartMarker = "SatrtGasBill",
 		const string& EndMarker = "EndGasBill",
 		const string& Separator = "//#//"
+	);
+
+	double GetOldGasIndex
+	(
+		const string& ClientID,
+		const string& FileName
 	);
 }

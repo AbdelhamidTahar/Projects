@@ -21,4 +21,7 @@ namespace ElectricityAndGasBillDataOperations
 		string ElectricityAndGasBillLine,
 		const string& Separator = "//#//"
 	);
+
+	vector<sElectricityAndGasBill> LoadAllElectricityAndGasBills
+	(const string &FileName = "ElectricityAndGasBills");
 }

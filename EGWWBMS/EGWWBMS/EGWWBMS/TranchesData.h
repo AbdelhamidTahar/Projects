@@ -14,6 +14,4 @@ namespace TranchesDataOperations
 {
 	double CalculateTotalTrancheAmountFromTo
 	(const short& From,  short To, const vector <sTranche>& vTrTranchsan);
-
-
 } 

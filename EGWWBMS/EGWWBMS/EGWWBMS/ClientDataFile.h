@@ -2,6 +2,7 @@
 #include <iostream>
 #include <vector>
 #include "Client.h"
+#include "ElectricityAndGasBillDataFile.h"
 using namespace std;
 
 namespace ClientDataOperations
@@ -24,7 +25,15 @@ namespace ClientDataOperations
 
 	sClient ConvertvDataClientToDataStruct
 	(
-		const vector<string> &vDataClient
+		const vector<string>& vDataClient
+	);
+
+	bool FindLastElectricityAndGasBillByClientID
+	(
+		const string& ClientID,
+		const vector<sElectricityAndGasBill>& vElectricityAndGasBill,
+		sElectricityAndGasBill& ElectricityAndGasBill
 	);
 
 }
+

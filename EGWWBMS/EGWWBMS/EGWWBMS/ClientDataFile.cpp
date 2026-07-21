@@ -70,3 +70,29 @@ sClient ClientDataOperations::ConvertClientStringLineToDataStruct
 
 	return Client;
 }
+
+bool ClientDataOperations::FindLastElectricityAndGasBillByClientID
+(
+	const string& ClientID, 
+	const vector<sElectricityAndGasBill>& vElectricityAndGasBill, 
+	sElectricityAndGasBill &ElectricityAndGasBill
+)
+{
+	int NumberOfBills = vElectricityAndGasBill.size();
+
+	if (NumberOfBills == 0)
+		return false;
+
+	NumberOfBills--;
+
+	for (int i = NumberOfBills; i >= 0; i--)
+	{
+		if (vElectricityAndGasBill[i].Client.ID == ClientID)
+		{
+			ElectricityAndGasBill = vElectricityAndGasBill[i];
+			return true;
+		}
+	}
+
+	return false;
+}

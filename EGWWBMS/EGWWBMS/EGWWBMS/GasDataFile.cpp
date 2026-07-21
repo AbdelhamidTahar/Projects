@@ -1,5 +1,5 @@
 #include "GasDataFile.h"
-#include "GlobalElectricityAndGasDataFile.h"
+#include "GlobalElectricityOrGasDataFile.h"
 
 
 string GasBillDataOperations::ConvertGasBillDataStructToStringLine
@@ -24,4 +24,15 @@ sElectricityOrGasBil GasBillDataOperations::ConvertGasBillStringLineToDataStruct
 {
 	return ElectricityOrGasBillDataOperations::ConvertElectricityOrGasStringLineToDataStruct
 	 (GasBil, StartMarker, EndMarker, Separator);
+}
+
+
+double GasBillDataOperations::GetOldGasIndex
+(
+	const string& ClientID,
+	const string& FileName
+)
+{
+	return ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
+	(ClientID, FileName, eOldIndexes::OldGasIndex);
 }

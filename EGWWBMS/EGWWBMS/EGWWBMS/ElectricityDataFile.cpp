@@ -1,6 +1,6 @@
 #include <iostream>
 #include "ElectricityDataFile.h"
-#include "GlobalElectricityAndGasDataFile.h"
+#include "GlobalElectricityOrGasDataFile.h"
 using namespace std;
 
 
@@ -27,4 +27,15 @@ sElectricityOrGasBil ElectricityBillDataOperations::ConvertElectricityBillString
 {
 	return ElectricityOrGasBillDataOperations::ConvertElectricityOrGasStringLineToDataStruct
 	(ElectricityBill, StartMarker, EndMarker, Separator);
+}
+
+
+double ElectricityBillDataOperations::GetOldElectricityIndex
+(
+	const string& ClientID,
+	const string& FileName
+)
+{
+	return ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
+	(ClientID, FileName, eOldIndexes::OldElectricityIndex);
 }

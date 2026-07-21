@@ -2,8 +2,11 @@
 #include <iostream>
 #include <string>
 #include "GlobalElectricityOrGas.h"
+#include "GlobalElectricityOrGasDataFile.h"
 using namespace std;
 
+
+enum eOldIndexes { OldElectricityIndex = 1, OldGasIndex = 2 };
 
 namespace ElectricityOrGasBillDataOperations
 {
@@ -16,7 +19,7 @@ namespace ElectricityOrGasBillDataOperations
 	);
 
 	sElectricityOrGasBil ConvertVectorsAndTranchesDataToElectricityOrGasBillStruct
-	 (const vector<string>& vDataStringElectricityOrGasBil, const sTranchesData& TranchesData);
+	(const vector<string>& vDataStringElectricityOrGasBil, const sTranchesData& TranchesData);
 
 	sElectricityOrGasBil ConvertElectricityOrGasStringLineToDataStruct
 	(
@@ -25,4 +28,8 @@ namespace ElectricityOrGasBillDataOperations
 		const string& EndMarker = "",
 		const string& Separator = "//#//"
 	);
+
+	double GetOldElectricityOrGasIndex
+	(const string& ClientID, const string& FileName, eOldIndexes OldElectricityOrGasIndex);
+
 }
