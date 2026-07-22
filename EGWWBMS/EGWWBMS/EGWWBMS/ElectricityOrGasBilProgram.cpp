@@ -16,10 +16,10 @@ sElectricityOrGasBil ElectricityOrGasBillProgram
 	ElectricityOrGasBil.OldIndex = ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
 	(ElectricityAndGasBill.Client.ID, "ElectricityAndGasBills", eTypeOfBill);
 
-	ElectricityOrGasBil.NewIndex = Reads::ReadPositiveDecimalNumber
-	("Please enter the new reading between parentheses (NewIndex): ");
+	ElectricityOrGasBil.NewIndex = Reads::ReadNewIndex
+	(ElectricityOrGasBil.OldIndex, "Please enter the new reading between parentheses (NewIndex): ");
 
-	ElectricityOrGasBil.Factor = Reads::ReadPositiveDecimalNumber
+	ElectricityOrGasBil.Factor = Reads::ReadFactor
 	("Please enter the Factor: ");
 
 	ElectricityOrGasBil.Consumption = CalculateConsumptionElectricityOrGas(ElectricityOrGasBil);

@@ -142,22 +142,50 @@ double Reads::ReadPositiveDecimalNumber(const string& Message)
 	return stod(DecimalNumber);
 }
 
+double Reads::ReadNewIndex(const double& OldIndex,const string& Message)
+{
+	double NewIndex = ReadPositiveDecimalNumber(Message);
+
+	while (NewIndex < OldIndex)
+	{
+		Messages::PrintErrorMessage
+		("Error: NewIndex cannot be less than OldIndex. Invalid input, please try again.\n");
+		NewIndex = ReadPositiveDecimalNumber(Message);
+	}
+
+	return NewIndex;
+}
+
+double Reads::ReadFactor(const string& Message)
+{
+	double Factor = ReadPositiveDecimalNumber(Message);
+
+	while (Factor == 0)
+	{
+		Messages::PrintErrorMessage
+		("Error: Factor cannot be zero. Factor must be greater than zero. Please try again.\n");
+		Factor = ReadPositiveDecimalNumber(Message);
+	}
+
+	return Factor;
+}
+
 bool Validations::IsFullNameValidat(const string& FullName)
 {
 	return !(IsHasSymbol(FullName) || IsHasDigit(FullName));
 }
 
-string Reads::ReadFullName(const string& Message)
+string Reads::ReadFullName()
 {
 	string FullName = "";
 	cout << "Please enter your full name: ";
-	cin >> FullName;
+	getline(cin >> ws, FullName);
 
 	if (!Validations::IsFullNameValidat(FullName))
 	{
 		Messages::PrintErrorMessage
 		("Invalid input. Symbols and Digits are not allowed. Please enter a Fuul Name and try again.\n");
-		FullName = ReadFullName(Message);
+		FullName = ReadFullName();
 	}
 	return FullName;
 }

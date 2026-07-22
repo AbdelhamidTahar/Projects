@@ -32,7 +32,11 @@ namespace Reads
 
 	double ReadPositiveDecimalNumber(const string& Message);
 
-	string ReadFullName(const string& Message);
+	string ReadFullName();
+
+	double ReadNewIndex(const double& OldIndex, const string& Message);
+
+	double ReadFactor(const string& Message);
 }
 
 namespace Messages
