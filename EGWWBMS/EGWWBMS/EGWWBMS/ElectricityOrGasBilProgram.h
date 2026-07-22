@@ -10,6 +10,6 @@ using namespace std;
 
 
 sElectricityOrGasBil ElectricityOrGasBillProgram
-(const sElectricityAndGasBill& ElectricityAndGasBill, eOldIndexes eTypeOfBill);
+(const sClient& Client, eOldIndexes eTypeOfBill);
 
 double CalculateConsumptionElectricityOrGas(const sElectricityOrGasBil& ElectricityOrGasBil);

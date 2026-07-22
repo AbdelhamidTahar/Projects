@@ -8,19 +8,20 @@ double CalculateConsumptionElectricityOrGas(const sElectricityOrGasBil &Electric
 	return (ElectricityOrGasBil.NewIndex - ElectricityOrGasBil.OldIndex) * ElectricityOrGasBil.Factor;
 }
 
+
 sElectricityOrGasBil ElectricityOrGasBillProgram
-(const sElectricityAndGasBill& ElectricityAndGasBill, eOldIndexes eTypeOfBill)
+(const sClient& Client, eOldIndexes eTypeOfBill)
 {
 	sElectricityOrGasBil ElectricityOrGasBil;
 
 	ElectricityOrGasBil.OldIndex = ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
-	(ElectricityAndGasBill.Client.ID, "ElectricityAndGasBills", eTypeOfBill);
+	(Client.ID, "ElectricityAndGasBills", eTypeOfBill);
 
 	ElectricityOrGasBil.NewIndex = Reads::ReadNewIndex
-	(ElectricityOrGasBil.OldIndex, "Please enter the new reading between parentheses (NewIndex): ");
+	(ElectricityOrGasBil.OldIndex, "\nPlease enter the new reading between parentheses (NewIndex): ");
 
 	ElectricityOrGasBil.Factor = Reads::ReadFactor
-	("Please enter the Factor: ");
+	("\nPlease enter the Factor: ");
 
 	ElectricityOrGasBil.Consumption = CalculateConsumptionElectricityOrGas(ElectricityOrGasBil);
 

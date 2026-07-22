@@ -10,7 +10,7 @@ sTranche TrancheOperations::ReadTrancheInfo()
 		Reads::ReadPositiveDecimalNumber("Enter maximum consumption for the tranche: ");
 
 	Tranch.TrancheUnitPrice = 
-		Reads::ReadPositiveDecimalNumber("Please enter the unit price: ");
+		Reads::ReadPositiveDecimalNumber("\nPlease enter the unit price: ");
 
 	return Tranch;
 }
@@ -75,7 +75,7 @@ vector <sTranche> TranchesOperations::ReadTranchesInfo()
 		vTranchesInfo.push_back(Tranch);
 		Count++;
 
-		cout << "Do you want to add another tranche? Enter 'y' for Yes or 'n' for No: ";
+		cout << "\nDo you want to add another tranche? Enter 'y' for Yes or 'n' for No: ";
 		cin >> AnswerReadMoreTranch;
 	} while (toupper(AnswerReadMoreTranch) == 'Y');
 	vTranchesInfo = TrancheOperations::GetLastTrancheMaxConsumption(vTranchesInfo);

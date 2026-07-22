@@ -4,4 +4,4 @@
 using namespace std;
 
 sElectricityOrGasBil ElectricityBillProgram
-(const sElectricityAndGasBill& ElectricityAndGasBill);
+(const sClient& Client);

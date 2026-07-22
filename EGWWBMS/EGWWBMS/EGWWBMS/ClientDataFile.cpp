@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include <vector>
+#include <fstream>
 #include "Input.h"
 #include "ClientDataFile.h"
 #include "GlobalDataFile.h"
@@ -93,6 +94,61 @@ bool ClientDataOperations::FindLastElectricityAndGasBillByClientID
 			return true;
 		}
 	}
+
+	return false;
+}
+
+
+vector<sClient> ClientDataOperations::LoadDataClient(const string& FileName)
+{
+	sClient Client;
+	vector<sClient> vClients;
+	fstream ClientData;
+	string ClientLine = "";
+
+	ClientData.open(FileName);
+	if (ClientData.is_open())
+	{
+		while (getline(ClientData, ClientLine))
+		{
+			Client = ConvertClientStringLineToDataStruct(ClientLine);
+			vClients.push_back(Client);
+		}
+		ClientData.close();
+	}
+
+
+	return vClients;
+}
+
+
+bool ClientDataOperations::FindClientByID
+(
+	sClient& Client,
+	const string& ClientID,
+	const vector<sClient>& vClients
+)
+{
+	for (const sClient &TClients : vClients)
+	{
+		if (TClients.ID == ClientID)
+		{
+			Client = TClients;
+			return true;
+		}
+
+	}
+
+	return false;
+}
+
+bool ClientDataOperations::GetClientByID(sClient& Client, const string& ClientID, const string& FileName)
+{
+	vector<sClient> vClients = LoadDataClient(FileName);
+	if (vClients.empty())
+		return false;
+	if (FindClientByID(Client, ClientID, vClients))
+		return true;
 
 	return false;
 }

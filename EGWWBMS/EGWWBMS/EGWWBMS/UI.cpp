@@ -32,6 +32,11 @@ void Menus::PrintMainMenu(const string& ErrorMessage )
 	PrintFootarMainMenu();
 	Messages::PrintErrorMessage(ErrorMessage);
 }
+void Menus::GoBackTotMainMenu(const string& ErrorMessage )
+{
+	PrintMainMenu(ErrorMessage);
+}
+
 
 
 void  Menus::PrintHeadarAddMenu()
@@ -60,6 +65,12 @@ void  Menus::PrintAddMenu(const string& ErrorMessage)
 	PrintFootarAddMenu();
 	Messages::PrintErrorMessage(ErrorMessage);
 }
+void  Menus::GoBackToAddMenu(const string& ErrorMessage)
+{
+	PrintAddMenu(ErrorMessage);
+}
+
+
 
 
 void Menus::PrintHeadarSerchMenu()
@@ -93,4 +104,8 @@ void Menus::PrintSerchMenu(const string& ErrorMessage )
 	PrintBodySerchMenu();
 	PrintFootarSerchMenu();
 	Messages::PrintErrorMessage(ErrorMessage);
+}
+void Menus::GoBackToSerchMenu(const string& ErrorMessage)
+{
+	PrintSerchMenu(ErrorMessage);
 }

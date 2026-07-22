@@ -140,8 +140,10 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ClientDataFile.cpp" />
+    <ClCompile Include="ClientProgram.cpp" />
     <ClCompile Include="EGWWBMS.cpp" />
     <ClCompile Include="ElectricityAndGasBillDataFile.cpp" />
+    <ClCompile Include="ElectricityAndGasBillProgram.cpp" />
     <ClCompile Include="ElectricityDataFile.cpp" />
     <ClCompile Include="ElectricityOrGasBilProgram.cpp" />
     <ClCompile Include="ElectricityProgram.cpp" />
@@ -163,8 +165,10 @@
   <ItemGroup>
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientDataFile.h" />
+    <ClInclude Include="ClientProgram.h" />
     <ClInclude Include="ElectricityAndGasBill.h" />
     <ClInclude Include="ElectricityAndGasBillDataFile.h" />
+    <ClInclude Include="ElectricityAndGasBillProgram.h" />
     <ClInclude Include="ElectricityDataFile.h" />
     <ClInclude Include="ElectricityOrGasBilProgram.h" />
     <ClInclude Include="ElectricityProgram.h" />

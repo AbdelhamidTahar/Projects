@@ -35,5 +35,19 @@ namespace ClientDataOperations
 		sElectricityAndGasBill& ElectricityAndGasBill
 	);
 
+
+	bool FindClientByID
+	(
+		sClient& Client,
+		const string& ClientID,
+		const vector<sClient>& vClients
+		
+	);
+
+	bool GetClientByID(sClient& Client, const string& ClientID, const string& FileName = "ClientData");
+
+
+	vector<sClient> LoadDataClient(const string& FileName = "ClientData");
+
 }
 

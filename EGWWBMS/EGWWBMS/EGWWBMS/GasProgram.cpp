@@ -5,7 +5,7 @@
 using namespace std;
 
 sElectricityOrGasBil GasBillProgram
-(const sElectricityAndGasBill& ElectricityAndGasBill)
+(const sClient& Client)
 {
-	return  ElectricityOrGasBillProgram(ElectricityAndGasBill, eOldIndexes::OldGasIndex);
+	return  ElectricityOrGasBillProgram(Client, eOldIndexes::OldGasIndex);
 }
