@@ -28,4 +28,9 @@ namespace ElectricityAndGasBillDataOperations
 	(const string &FileName = "ElectricityAndGasBills");
 
 	string GenerateBillID();
+
+	bool SaveElectricityAndGasBillsInFile
+	(
+	const sElectricityAndGasBill& ElectricityAndGasBill, const string& FileName = "ElectricityAndGasBills"
+	);
 }

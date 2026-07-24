@@ -3,4 +3,4 @@
 using namespace std;
 
 
-sElectricityAndGasBill  ElectricityAndGasBillProgram();
+bool  ElectricityAndGasBillProgram();

@@ -165,3 +165,34 @@ string ElectricityAndGasBillDataOperations::GenerateBillID()
 
 	return BillID;
 }
+
+bool ElectricityAndGasBillDataOperations::SaveElectricityAndGasBillsInFile
+(
+	const sElectricityAndGasBill& ElectricityAndGasBill, const string& FileName
+)
+{
+	string DataLine =
+		ElectricityAndGasBillDataOperations::ConvertElectricityAndGasBillDataStructToStringLine
+		(ElectricityAndGasBill);
+
+	fstream ElectricityAndGasBillsFile;
+
+	ElectricityAndGasBillsFile.open(FileName, std::ios::app);
+
+	if (ElectricityAndGasBillsFile.is_open())
+	{
+		ElectricityAndGasBillsFile << DataLine << endl;
+		ElectricityAndGasBillsFile.close();
+
+
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+
+
+	return true;
+}

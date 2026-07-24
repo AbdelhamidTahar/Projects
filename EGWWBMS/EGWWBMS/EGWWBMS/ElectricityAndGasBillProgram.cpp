@@ -11,7 +11,7 @@
 
 using namespace std;
 
-sElectricityAndGasBill  ElectricityAndGasBillProgram()
+bool  ElectricityAndGasBillProgram()
 {
 	sElectricityAndGasBill ElectricityAndGasBill;
 
@@ -49,6 +49,10 @@ sElectricityAndGasBill  ElectricityAndGasBillProgram()
 		ElectricityAndGasBill.StampAmount;
 
 
+	ElectricityAndGasBillDataOperations::SaveElectricityAndGasBillsInFile(ElectricityAndGasBill);
 
-	return ElectricityAndGasBill;
+	//طباعى لفاتورة
+
+
+	return true;
 }
