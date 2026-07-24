@@ -2,6 +2,7 @@
 #include <iostream>
 #include <string>
 #include "Client.h"
+
 #include "GlobalElectricityOrGas.h"
 #include "Taxes.h"
 
@@ -20,3 +21,10 @@ struct sElectricityAndGasBill
 	double StampAmount = 0;
 	double TotalAmountDueCash = 0;
 };
+
+double CalculateAmountWithoutTaxes
+(const sTranchesData& ElectricityTranchesData,const sTranchesData& GasTranchesData,const sTaxes& Taxes);
+
+double CalculateAmountAmountWithTaxes
+(const sElectricityOrGasBil& ElectricityBill, const sElectricityOrGasBil& GasBill, const sTaxes& Taxes);
+

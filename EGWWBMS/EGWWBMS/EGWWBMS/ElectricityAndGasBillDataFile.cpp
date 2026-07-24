@@ -151,3 +151,17 @@ vector<sElectricityAndGasBill> ElectricityAndGasBillDataOperations::LoadAllElect
 	return vElectricityAndGasBills;
 }
 
+string ElectricityAndGasBillDataOperations::GenerateBillID()
+{
+	string BillID = "";
+	vector<sElectricityAndGasBill> vElectricityAndGasBills =
+		ElectricityAndGasBillDataOperations::LoadAllElectricityAndGasBills();
+
+	sElectricityAndGasBill LastElectricityAndGasBills =
+		vElectricityAndGasBills[vElectricityAndGasBills.size() - 1];
+
+
+	BillID = to_string(stod(LastElectricityAndGasBills.ID) + 1);
+
+	return BillID;
+}

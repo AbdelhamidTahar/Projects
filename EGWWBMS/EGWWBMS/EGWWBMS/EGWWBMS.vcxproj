@@ -142,6 +142,7 @@
     <ClCompile Include="ClientDataFile.cpp" />
     <ClCompile Include="ClientProgram.cpp" />
     <ClCompile Include="EGWWBMS.cpp" />
+    <ClCompile Include="ElectricityAndGasBill.cpp" />
     <ClCompile Include="ElectricityAndGasBillDataFile.cpp" />
     <ClCompile Include="ElectricityAndGasBillProgram.cpp" />
     <ClCompile Include="ElectricityDataFile.cpp" />
@@ -153,8 +154,10 @@
     <ClCompile Include="GlobalElectricityOrGasDataFile.cpp" />
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MAth.cpp" />
+    <ClCompile Include="StampProgram.cpp" />
     <ClCompile Include="Taxes.cpp" />
     <ClCompile Include="TaxesDataFile.cpp" />
+    <ClCompile Include="TaxesProgram.cpp" />
     <ClCompile Include="Tranche.cpp" />
     <ClCompile Include="TrancheDataFile.cpp" />
     <ClCompile Include="TranchesData.cpp" />
@@ -179,8 +182,10 @@
     <ClInclude Include="GlobalElectricityOrGasDataFile.h" />
     <ClInclude Include="Input.h" />
     <ClInclude Include="Math.h" />
+    <ClInclude Include="StampProgram.h" />
     <ClInclude Include="Taxes.h" />
     <ClInclude Include="TaxesDataFile.h" />
+    <ClInclude Include="TaxesProgram.h" />
     <ClInclude Include="Tranche.h" />
     <ClInclude Include="TrancheDataFile.h" />
     <ClInclude Include="TranchesData.h" />

@@ -1,6 +1,8 @@
 #pragma once
 #include <iostream>
+#include <vector>
 #include <string>
+
 #include "ElectricityAndGasBill.h"
 using namespace std;
 
@@ -24,4 +26,6 @@ namespace ElectricityAndGasBillDataOperations
 
 	vector<sElectricityAndGasBill> LoadAllElectricityAndGasBills
 	(const string &FileName = "ElectricityAndGasBills");
+
+	string GenerateBillID();
 }
