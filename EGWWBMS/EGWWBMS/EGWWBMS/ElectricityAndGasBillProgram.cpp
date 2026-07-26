@@ -8,6 +8,7 @@
 #include "ClientProgram.h"
 #include "TaxesProgram.h"
 #include "StampProgram.h"
+#include "Print.h"
 
 using namespace std;
 
@@ -51,7 +52,7 @@ bool  ElectricityAndGasBillProgram()
 
 	ElectricityAndGasBillDataOperations::SaveElectricityAndGasBillsInFile(ElectricityAndGasBill);
 
-	//طباعى لفاتورة
+	PrintElectricityAndGasBill(ElectricityAndGasBill);
 
 
 	return true;
