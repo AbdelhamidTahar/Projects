@@ -34,6 +34,7 @@ void Menus::PrintMainMenu(const string& ErrorMessage )
 }
 void Menus::GoBackTotMainMenu(const string& ErrorMessage )
 {
+	system("cls");
 	PrintMainMenu(ErrorMessage);
 }
 
@@ -67,6 +68,7 @@ void  Menus::PrintAddMenu(const string& ErrorMessage)
 }
 void  Menus::GoBackToAddMenu(const string& ErrorMessage)
 {
+	system("cls");
 	PrintAddMenu(ErrorMessage);
 }
 
@@ -107,5 +109,6 @@ void Menus::PrintSerchMenu(const string& ErrorMessage )
 }
 void Menus::GoBackToSerchMenu(const string& ErrorMessage)
 {
+	system("cls");
 	PrintSerchMenu(ErrorMessage);
 }

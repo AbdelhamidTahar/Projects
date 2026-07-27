@@ -16,3 +16,6 @@ void PrintTranchesData(const sTranchesData& TranchesData);
 void PrintFootarElectricityAndGasBill();
 
 
+void PrintClient(const sClient& Client);
+
+

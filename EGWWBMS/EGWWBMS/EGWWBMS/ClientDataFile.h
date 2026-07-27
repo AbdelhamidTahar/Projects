@@ -49,5 +49,7 @@ namespace ClientDataOperations
 
 	vector<sClient> LoadDataClient(const string& FileName = "ClientData");
 
+	bool SaveClientToFile(const sClient& Client, const string& FileName = "ClientData");
+
 }
 

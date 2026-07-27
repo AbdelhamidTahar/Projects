@@ -152,3 +152,37 @@ bool ClientDataOperations::GetClientByID(sClient& Client, const string& ClientID
 
 	return false;
 }
+
+bool ClientDataOperations::SaveClientToFile(const sClient& Client, const string& FileName)
+{
+	string ClientData = ConvertClientDataStructToStringLine(Client);
+	fstream ClientFile;
+
+	ClientFile.open(FileName, std::ios::app);
+	if (ClientFile.is_open())
+	{
+		ClientFile << ClientData << endl;
+		ClientFile.close();
+
+
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+
+
+	return true;
+}
+
+
+
+
+
+
+	
+
+
+
+

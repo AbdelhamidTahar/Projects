@@ -2,5 +2,5 @@
 #include "ElectricityAndGasBill.h"
 using namespace std;
 
-
-bool  ElectricityAndGasBillProgram();
+bool AddElectricityAndGasBillsProgram();
+bool  AddElectricityAndGasBillProgram();

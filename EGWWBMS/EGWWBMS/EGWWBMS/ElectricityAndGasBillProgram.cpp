@@ -12,13 +12,16 @@
 
 using namespace std;
 
-bool  ElectricityAndGasBillProgram()
+bool  AddElectricityAndGasBillProgram()
 {
 	sElectricityAndGasBill ElectricityAndGasBill;
 
 
 	if (!ClientProgram(ElectricityAndGasBill.Client))
-		Menus::GoBackTotMainMenu("Error: Client not found.\n");
+	{
+		Menus::GoBackToAddMenu("Error: Client not found.\n");
+		return false;
+	}
 
 	ElectricityAndGasBill.ID = ElectricityAndGasBillDataOperations::GenerateBillID();
 	ElectricityAndGasBill.ElectricityBill = ElectricityBillProgram(ElectricityAndGasBill.Client);
@@ -54,6 +57,24 @@ bool  ElectricityAndGasBillProgram()
 
 	PrintElectricityAndGasBill(ElectricityAndGasBill);
 
+
+	return true;
+}
+
+bool AddElectricityAndGasBillsProgram()
+{
+	char Answer = 'N';
+	do
+	{
+		system("cls");
+		if(AddElectricityAndGasBillProgram())
+		{
+			cout << "\nDo You Want Add More Electricity And GasBill: ";
+			cin >> Answer;
+			Answer = toupper(Answer);
+		}
+
+	} while (Answer == 'Y');
 
 	return true;
 }
