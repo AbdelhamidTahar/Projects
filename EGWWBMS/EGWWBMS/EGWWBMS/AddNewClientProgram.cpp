@@ -1,6 +1,7 @@
 #include "AddNewClientProgram.h"
 #include "ClientProgram.h"
 #include "Input.h"
+#include "Print.h"
 
 
 bool AddNewClient()
@@ -13,31 +14,24 @@ bool AddNewClient()
 
 	if (ClientDataOperations::SaveClientToFile(Client))
 	{
-
+		PrintClient(Client);
+		return true;
 	}
-
-}
-bool AddNewClients();
-
-
-
-
-	ElectricityAndGasBillDataOperations::SaveElectricityAndGasBillsInFile(ElectricityAndGasBill);
-
-	PrintElectricityAndGasBill(ElectricityAndGasBill);
 
 
 	return true;
 }
 
-bool AddElectricityAndGasBillsProgram()
+bool AddNewClients()
 {
 	char Answer = 'N';
 	do
 	{
 		system("cls");
-		if (AddElectricityAndGasBillProgram())
+		if (AddNewClient())
 		{
+			cout << "\nClient added successfully!\n";
+
 			cout << "\nDo You Want Add More Electricity And GasBill: ";
 			cin >> Answer;
 			Answer = toupper(Answer);
@@ -45,5 +39,12 @@ bool AddElectricityAndGasBillsProgram()
 
 	} while (Answer == 'Y');
 
+
 	return true;
 }
+
+
+
+
+
+

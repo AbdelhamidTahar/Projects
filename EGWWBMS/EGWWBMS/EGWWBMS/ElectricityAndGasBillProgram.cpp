@@ -69,6 +69,8 @@ bool AddElectricityAndGasBillsProgram()
 		system("cls");
 		if(AddElectricityAndGasBillProgram())
 		{
+			cout << "\nBill added successfully!\n";
+
 			cout << "\nDo You Want Add More Electricity And GasBill: ";
 			cin >> Answer;
 			Answer = toupper(Answer);
@@ -78,3 +80,4 @@ bool AddElectricityAndGasBillsProgram()
 
 	return true;
 }
+

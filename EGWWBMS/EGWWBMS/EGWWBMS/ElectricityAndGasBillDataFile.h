@@ -33,4 +33,22 @@ namespace ElectricityAndGasBillDataOperations
 	(
 	const sElectricityAndGasBill& ElectricityAndGasBill, const string& FileName = "ElectricityAndGasBills"
 	);
+
+	bool FindElectricityAndGasBillWithID
+	(
+		const string& BillID,
+		const vector<sElectricityAndGasBill>& vElectricityAndGasBill,
+		sElectricityAndGasBill& ElectricityAndGasBill
+	);
+
+	bool GetForElectricityAndGasBillWithID
+	(
+		const string& BillID,
+		sElectricityAndGasBill& ElectricityAndGasBill
+	);
+	vector<sElectricityAndGasBill>FindElectricityAndGasBillWithClientID
+	(
+		const vector<sElectricityAndGasBill>& vElectricityAndGasBill,
+		const string& ClientID
+	);
 }

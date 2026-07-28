@@ -96,6 +96,15 @@
     <ClCompile Include="AddNewClientProgram.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SerchForElectricityAndGasBillWithIDProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="SerchForElectricityAndGasBillWithClientID.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ShowAllElectricity&amp;GasBillsProgram.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="UI.h">
@@ -180,6 +189,15 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="AddNewClientProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SearchForElectricityAndGasBillWithIDProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SerchForElectricity&amp;GasBillWithClientIDProgram.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShowAllElectricity&amp;GasBillsProgram.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

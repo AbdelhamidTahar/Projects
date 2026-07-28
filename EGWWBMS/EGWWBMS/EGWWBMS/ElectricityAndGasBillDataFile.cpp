@@ -187,12 +187,64 @@ bool ElectricityAndGasBillDataOperations::SaveElectricityAndGasBillsInFile
 
 		return true;
 	}
-	else
+
+
+	return false;
+}
+
+bool ElectricityAndGasBillDataOperations::FindElectricityAndGasBillWithID
+(
+	const string& BillID,
+	const vector<sElectricityAndGasBill>& vElectricityAndGasBill,
+	sElectricityAndGasBill& ElectricityAndGasBill
+)
+{
+	for (const sElectricityAndGasBill& TElectricityAndGasBill : vElectricityAndGasBill)
 	{
-		return false;
+		if (TElectricityAndGasBill.ID == BillID)
+		{
+			ElectricityAndGasBill = TElectricityAndGasBill;
+			return true;
+		}
+	}
+
+	return false;
+
+}
+
+bool ElectricityAndGasBillDataOperations::GetForElectricityAndGasBillWithID
+(
+	const string& BillID,
+	sElectricityAndGasBill& ElectricityAndGasBill
+)
+{
+	vector<sElectricityAndGasBill>vElectricityAndGasBill =
+		ElectricityAndGasBillDataOperations::LoadAllElectricityAndGasBills();
+
+	if (FindElectricityAndGasBillWithID(BillID, vElectricityAndGasBill, ElectricityAndGasBill))
+		return true;
+
+
+
+	return false;
+}
+
+vector<sElectricityAndGasBill>ElectricityAndGasBillDataOperations::
+FindElectricityAndGasBillWithClientID
+(
+	const vector<sElectricityAndGasBill>& vElectricityAndGasBill,
+	const string& ClientID
+)
+{
+	vector<sElectricityAndGasBill> TvElectricityAndGasBill;
+
+	for (const sElectricityAndGasBill& ElectricityAndGasBill : vElectricityAndGasBill)
+	{
+		if (ElectricityAndGasBill.Client.ID == ClientID)
+			TvElectricityAndGasBill.push_back(ElectricityAndGasBill);
 	}
 
 
 
-	return true;
+	return TvElectricityAndGasBill;
 }

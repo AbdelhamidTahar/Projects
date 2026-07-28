@@ -156,6 +156,9 @@
     <ClCompile Include="Input.cpp" />
     <ClCompile Include="MAth.cpp" />
     <ClCompile Include="Print.cpp" />
+    <ClCompile Include="SerchForElectricityAndGasBillWithClientID.cpp" />
+    <ClCompile Include="SerchForElectricityAndGasBillWithIDProgram.cpp" />
+    <ClCompile Include="ShowAllElectricity&amp;GasBillsProgram.cpp" />
     <ClCompile Include="StampProgram.cpp" />
     <ClCompile Include="Taxes.cpp" />
     <ClCompile Include="TaxesDataFile.cpp" />
@@ -169,6 +172,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="AddNewClientProgram.h" />
+    <ClInclude Include="SearchForElectricityAndGasBillWithIDProgram.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientDataFile.h" />
     <ClInclude Include="ClientProgram.h" />
@@ -186,6 +190,8 @@
     <ClInclude Include="Input.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Print.h" />
+    <ClInclude Include="SerchForElectricity&amp;GasBillWithClientIDProgram.h" />
+    <ClInclude Include="ShowAllElectricity&amp;GasBillsProgram.h" />
     <ClInclude Include="StampProgram.h" />
     <ClInclude Include="Taxes.h" />
     <ClInclude Include="TaxesDataFile.h" />
