@@ -2,6 +2,7 @@
 #include <string>
 #include <cctype>
 #include "Input.h"
+#include "Math.h"
 using namespace std;
 
 bool Validations::IsHasSymbol(const string& Input)
@@ -168,6 +169,60 @@ double Reads::ReadFactor(const string& Message)
 	}
 
 	return Factor;
+}
+
+eMainMenuChoice Reads::ReadMainMenuchose()
+{
+	int operation = 0;
+	cout << "Please select the operation you wish to perform: ";
+	cin >> operation;
+
+	while (!CheckMath::IsNumberInRange(operation, 1, 3))
+	{
+		cout << endl;
+		cout << "Error: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\n";
+		cout << "Please select the operation you wish to perform: ";
+		cin >> operation;
+	}
+
+
+	return (eMainMenuChoice)operation;
+}
+
+eAddMenuChoice Reads::ReadAddMenuchose()
+{
+	int operation = 0;
+	cout << "Please select the operation you wish to perform: ";
+	cin >> operation;
+
+	while (!CheckMath::IsNumberInRange(operation, 1, 3))
+	{
+		cout << endl;
+		cout << "Error: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\n";
+		cout << "Please select the operation you wish to perform: ";
+		cin >> operation;
+	}
+
+
+	return (eAddMenuChoice)operation;
+}
+            
+eSarchMenuChoice Reads::ReadSarchMenuchose()
+{
+	int operation = 0;
+	cout << "Please select the operation you wish to perform: ";
+	cin >> operation;
+
+	while (!CheckMath::IsNumberInRange(operation, 1, 7))
+	{
+		cout << endl;
+		cout << "Error: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\n";
+		cout << "Please select the operation you wish to perform: ";
+		cin >> operation;
+	}
+
+
+	return (eSarchMenuChoice)operation;
 }
 
 bool Validations::IsFullNameValidat(const string& FullName)

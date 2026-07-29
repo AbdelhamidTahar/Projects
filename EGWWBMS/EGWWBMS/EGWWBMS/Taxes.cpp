@@ -38,8 +38,10 @@ sTaxes TaxesOperations::ReadTaxesInfo()
 double TaxesOperations::CalculateFirstVATAmount
       (const double& PrimaryTranchesTotalAmountElectricityAndGas, const sTaxes& Taxes)
 {
-	double VATAmount = CalculateVTA(PrimaryTranchesTotalAmountElectricityAndGas, Taxes.FirstVATPercentage) +
-		Taxes.FixedCharges + Taxes.ServiceAndFees;
+	double VATAmount = Taxes.FixedCharges + Taxes.ServiceAndFees +
+		PrimaryTranchesTotalAmountElectricityAndGas;
+	 VATAmount = CalculateVTA(VATAmount, Taxes.FirstVATPercentage);
+		
 	return VATAmount;
 }
 

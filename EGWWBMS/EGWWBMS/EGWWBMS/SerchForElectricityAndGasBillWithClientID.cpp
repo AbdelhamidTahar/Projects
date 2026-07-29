@@ -1,5 +1,6 @@
 #include "SerchForElectricity&GasBillWithClientIDProgram.h"
 #include "ClientProgram.h"
+#include "SarchMenuProgram.h"
 #include "UI.h"
 #include "Print.h"
 
@@ -27,7 +28,7 @@ bool SerchForElectricityAndGasBillWithClientIDProgram()
 
 	if (vElectricityAndGasBill.empty())
 	{
-		Menus::GoBackToSerchMenu("Sorry, there are currently no bills for this client!\n");
+		SarchMenuProgram("Sorry, there are currently no bills for this client!\n");
 		return false;
 	}
 

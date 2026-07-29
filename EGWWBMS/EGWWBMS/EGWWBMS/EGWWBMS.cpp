@@ -4,13 +4,19 @@
 
 
 #include <iostream>
-#include "UI.h"
+#include "MainMenuProgram.h"
 using namespace std;
-using namespace Menus;
+
+void StartProgram()
+{
+    MainMenuProgram();
+    return;
+}
 
 int main()
 {
 
+    StartProgram();
 
     return 0;
 }

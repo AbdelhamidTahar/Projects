@@ -19,11 +19,10 @@ bool SearchForElectricityAndGasBillWithIDProgram()
 		PrintElectricityAndGasBill(ElectricityAndGasBill);
 		return true;
 	}
-
-		Menus::GoBackToSerchMenu("Error: No Electricity and Gas Bill found with this ID!");
-		return false;
-
+	SarchMenuProgram("Error: No Electricity and Gas Bill found with this ID!");
+	
 
 
-	return true;
+	return false;
+
 }

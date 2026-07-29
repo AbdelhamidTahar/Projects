@@ -13,4 +13,9 @@ namespace OperationsMath
 	double Multiply(double firstNumber, double secondNumber);
 }
 
+namespace CheckMath
+{
+	bool IsNumberInRange(const int& Number, const int& From, const int& To);
+}
+
 

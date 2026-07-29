@@ -1,6 +1,9 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "MainMenuProgram.h"
+#include "AddMenuProgram.h"
+#include "SArchMenuProgram.h"
 using namespace std;
 
 namespace Validations
@@ -37,6 +40,12 @@ namespace Reads
 	double ReadNewIndex(const double& OldIndex, const string& Message);
 
 	double ReadFactor(const string& Message);
+
+	eMainMenuChoice ReadMainMenuchose();
+
+	eAddMenuChoice ReadAddMenuchose();
+
+	eSarchMenuChoice ReadSarchMenuchose();
 }
 
 namespace Messages

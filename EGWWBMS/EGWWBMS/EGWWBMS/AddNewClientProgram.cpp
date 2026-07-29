@@ -9,7 +9,12 @@ bool AddNewClient()
 	sClient Client;
 
 	if (ClientProgram(Client))
+	{
+		AddMenuProgram
+		("Error: A client with this ID already exists! Please choose another ID.\n");
 		return false;
+	}
+
 	Client.FullName = Reads::ReadFullName();
 
 	if (ClientDataOperations::SaveClientToFile(Client))

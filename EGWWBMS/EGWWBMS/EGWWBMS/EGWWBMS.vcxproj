@@ -139,6 +139,7 @@
     </Manifest>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="AddMenuProgram.cpp" />
     <ClCompile Include="AddNewClientProgram.cpp" />
     <ClCompile Include="ClientDataFile.cpp" />
     <ClCompile Include="ClientProgram.cpp" />
@@ -154,12 +155,15 @@
     <ClCompile Include="GlobalDataFile.cpp" />
     <ClCompile Include="GlobalElectricityOrGasDataFile.cpp" />
     <ClCompile Include="Input.cpp" />
+    <ClCompile Include="MainMenuProgram.cpp" />
     <ClCompile Include="MAth.cpp" />
     <ClCompile Include="Print.cpp" />
+    <ClCompile Include="SarchMenuProgramcpp.cpp" />
     <ClCompile Include="SerchForClientWithFullNameProgram.cpp" />
     <ClCompile Include="SerchForClientWithIDProgram.cpp" />
     <ClCompile Include="SerchForElectricityAndGasBillWithClientID.cpp" />
     <ClCompile Include="SerchForElectricityAndGasBillWithIDProgram.cpp" />
+    <ClCompile Include="ShowAllClientsProgram.cpp" />
     <ClCompile Include="ShowAllElectricity&amp;GasBillsProgram.cpp" />
     <ClCompile Include="StampProgram.cpp" />
     <ClCompile Include="Taxes.cpp" />
@@ -173,7 +177,10 @@
     <ClCompile Include="UI.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="AddMenuProgram.h" />
     <ClInclude Include="AddNewClientProgram.h" />
+    <ClInclude Include="MainMenuProgram.h" />
+    <ClInclude Include="SarchMenuProgram.h" />
     <ClInclude Include="SearchForElectricityAndGasBillWithIDProgram.h" />
     <ClInclude Include="Client.h" />
     <ClInclude Include="ClientDataFile.h" />
@@ -195,6 +202,7 @@
     <ClInclude Include="SerchForClientWithFullNameProgram.h" />
     <ClInclude Include="SerchForClientWithIDProgram.h" />
     <ClInclude Include="SerchForElectricity&amp;GasBillWithClientIDProgram.h" />
+    <ClInclude Include="ShowAllClientsProgram.h" />
     <ClInclude Include="ShowAllElectricity&amp;GasBillsProgram.h" />
     <ClInclude Include="StampProgram.h" />
     <ClInclude Include="Taxes.h" />

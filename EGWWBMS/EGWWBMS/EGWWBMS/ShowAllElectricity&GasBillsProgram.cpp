@@ -1,5 +1,6 @@
 #include "ShowAllElectricity&GasBillsProgram.h"
 #include "ElectricityAndGasBillDataFile.h"
+#include "SarchMenuProgram.h"
 
 
 bool ShowAllElectricityAndGasBillsProgram()
@@ -9,7 +10,7 @@ bool ShowAllElectricityAndGasBillsProgram()
 
 	if (vElectricityAndGasBill.empty())
 	{
-		Menus::GoBackToSerchMenu("Sorry, there are no electricity and gas bills to display!\n");
+		SarchMenuProgram("Sorry, there are no electricity and gas bills to display!\n");
 		return false;
 	}
 

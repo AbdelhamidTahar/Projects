@@ -27,6 +27,7 @@ void Menus::PrintFootarMainMenu()
 }
 void Menus::PrintMainMenu(const string& ErrorMessage )
 {
+	system("cls");
 	PrintHeadarMainMenu();
 	PrintBodyMainMenu();
 	PrintFootarMainMenu();
@@ -60,6 +61,7 @@ void  Menus::PrintFootarAddMenu()
 }
 void  Menus::PrintAddMenu(const string& ErrorMessage)
 {
+	system("cls");
 	PrintHeadarAddMenu();
 	PrintBodyAddMenu();
 	PrintFootarAddMenu();
@@ -98,6 +100,7 @@ void Menus::PrintFootarSerchMenu()
 }
 void Menus::PrintSerchMenu(const string& ErrorMessage )
 {
+	system("cls");
 	PrintHeadarSerchMenu();
 	PrintBodySerchMenu();
 	PrintFootarSerchMenu();

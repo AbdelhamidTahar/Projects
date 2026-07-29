@@ -2,6 +2,7 @@
 #include "ClientProgram.h"
 #include "Print.h"
 #include "UI.h"
+#include "SarchMenuProgram.h"
 
 bool SerchForClientWithIDProgram()
 {
@@ -9,7 +10,7 @@ bool SerchForClientWithIDProgram()
 
 	if (!ClientProgram(Client))
 	{
-		Menus::GoBackToSerchMenu("Error: Sorry, no client found with this ID!\n");
+		SarchMenuProgram("Error: Sorry, no client found with this ID!\n");
 		return false;
 	}
 

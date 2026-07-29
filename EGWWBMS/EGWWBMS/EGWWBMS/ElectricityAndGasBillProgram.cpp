@@ -19,7 +19,7 @@ bool  AddElectricityAndGasBillProgram()
 
 	if (!ClientProgram(ElectricityAndGasBill.Client))
 	{
-		Menus::GoBackToAddMenu("Error: Client not found.\n");
+		AddMenuProgram("Error: Client not found.\n");
 		return false;
 	}
 

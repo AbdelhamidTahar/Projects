@@ -4,6 +4,7 @@
 #include "ClientDataFile.h"
 #include "UI.h"
 #include "Print.h"
+#include "SarchMenuProgram.h"
 
 bool SerchForClientWithFullNameProgram()
 {
@@ -14,7 +15,7 @@ bool SerchForClientWithFullNameProgram()
 
 	if (vClient.empty())
 	{
-		Menus::GoBackToSerchMenu("Error: Sorry, there are no clients found with this name!\n");
+		SarchMenuProgram("Error: Sorry, there are no clients found with this name!\n");
 		return false;
 	}
 	 
