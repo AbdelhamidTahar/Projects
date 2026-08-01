@@ -15,8 +15,8 @@ void PrintHeadarElectricityAndGasBill()
 }
 void PrintClient(const sClient& Client)
 {
-	cout << "Client ID:" << left << setw(10) << Client.ID << endl;
-	cout << "Client Full Name:" << left << setw(30) << Client.FullName << endl;
+	cout << "\nClient ID:" << left << "\033[33m" << setw(10) << Client.ID << "\033[0m" << endl;
+	cout << "Client Full Name:" << left << "\033[33m" << setw(30) << Client.FullName << "\033[0m" << endl;
 	cout << endl;
 }
 
@@ -25,17 +25,21 @@ void PrintTranches(const vector<sTranche>& vTranche)
 {
 
 
-	cout << "__________________________________________________________________________________\n";
-	cout << "|Tranche Consumption|Maximum Tranche Consumption|Tranche Unit Price|Tranche Amount|\n";
-	cout << "----------------------------------------------------------------------------------\n";
+	cout << "_______________________________________________________________________________________\n";
+	cout << "|Tranche Consumption|Maximum Tranche Consumption|Tranche Unit Price|Tranche Amount    |\n";
+	cout << "---------------------------------------------------------------------------------------\n";
 	
 	for (const sTranche& Tranche : vTranche)
 	{
+
 		cout << left << "|" << setw(19) << Tranche.TrancheConsumption << "|"
-			<< setw(19) << Tranche.MaximumTrancheConsumption << "|"
-			<< setw(19) << Tranche.TrancheUnitPrice << "|"
-			<< setw(19) << Tranche.TrancheAmount << "|\n";
-	cout << "----------------------------------------------------------------------------------\n";
+			<< setw(27) << Tranche.MaximumTrancheConsumption << "|";
+
+		cout << left << setw(27) << ("\033[1;96m" + to_string(Tranche.TrancheUnitPrice) + "\033[0m") << "|";
+
+		cout << left << "\033[1;96m" << setw(18) << to_string(Tranche.TrancheAmount) << "\033[0m" << "  |\n";
+
+		cout << "---------------------------------------------------------------------------------------\n";
 	}
 	
 }
@@ -43,40 +47,65 @@ void PrintTranches(const vector<sTranche>& vTranche)
 void PrintTranchesData(const sTranchesData& TranchesData)
 {
 	PrintTranches(TranchesData.vTranches);
-	cout << "Primary Tranches Total Amount: " << TranchesData.PrimaryTranchesTotalAmount << endl;
-	cout << "Secondary Tranches Total Amount: " << TranchesData.SecondaryTranchesTotalAmount << endl;
+	
+
+	cout << "Primary Tranches Total Amount: " 
+		<< "\033[1;96m" << TranchesData.PrimaryTranchesTotalAmount << "\033[0m" << endl;
+	cout << "Secondary Tranches Total Amount: " 
+		<< "\033[1;96m" << TranchesData.SecondaryTranchesTotalAmount << "\033[0m" << endl;
 	cout << endl;
 }
 
 void PrintBodyElectricityAndGasBill(const sElectricityAndGasBill& ElectricityAndGasBill)
 {
+	
 	PrintClient(ElectricityAndGasBill.Client);
 
-	printf("Electricity Consumption: %.2f KWH\n", ElectricityAndGasBill.ElectricityBill.Consumption);
+	cout << "Bill ID: " << "\033[33m" << ElectricityAndGasBill.ID << "\033[0m" << endl;
+	cout << endl;
+
+	printf("Old Index Electricity: \033[1;96m%.2f\033[0m\n", 
+		ElectricityAndGasBill.ElectricityBill.OldIndex);
+
+	printf("New Index Electricity:\033[1;96m%.2f\033[0m\n", 
+		ElectricityAndGasBill.ElectricityBill.NewIndex);
+
+	printf("Electricity Consumption: %.2f KWH\n", 
+		ElectricityAndGasBill.ElectricityBill.Consumption);
+
 	printf("Electricity Consumption Amount: %.2f DA\n",
 		ElectricityAndGasBill.ElectricityBill.ConsumptionAmount);
 
 	cout << endl;
+	printf("Old Index Gas: \033[1;96m%.2f\033[0m\n", 
+		ElectricityAndGasBill.GasBill.OldIndex);
 
+	printf("New Index Gas:\033[1;96m%.2f\033[0m\n",
+		ElectricityAndGasBill.GasBill.NewIndex);
 
-	printf("Gas Consumption: %.2f TH\n", ElectricityAndGasBill.GasBill.Consumption);
-	printf("Gas Consumption Amount: %.2f DA\n",
+	printf("Gas Consumption:\033[1; 96m %.2f TH\033[0m\n", 
+		ElectricityAndGasBill.GasBill.Consumption);
+
+	printf("Gas Consumption Amount:\033[1; 96m %.2f DA\033[0m\n",
 		ElectricityAndGasBill.GasBill.ConsumptionAmount);
 
-	cout << "Electricity Bill Tranches Data\n";
+	cout << "\n\nElectricity Bill Tranches Data\n";
 	PrintTranchesData(ElectricityAndGasBill.ElectricityBill.TranchesData);
-	cout << "Gas Bill Tranches Data\n";
+
+	cout << "\n\nGas Bill Tranches Data\n";
 	PrintTranchesData(ElectricityAndGasBill.GasBill.TranchesData);
 
 
 	cout << "Fixed Charges: " << ElectricityAndGasBill.Taxes.FixedCharges << endl;
 	cout << "Service And Fees: " << ElectricityAndGasBill.Taxes.ServiceAndFees << endl;
-	cout << "Amount Without Taxes: " << ElectricityAndGasBill.AmountWithoutTaxes << endl;
+	cout << "Amount Without Taxes: " 
+		<< "\033[1;96m" << ElectricityAndGasBill.AmountWithoutTaxes << "\033[0m" << endl;
 	cout << "VTA" << ElectricityAndGasBill.Taxes.FirstVATPercentage << ": " 
 		<< ElectricityAndGasBill.Taxes.FirstVATAmount << endl;
 	cout << "VTA" << ElectricityAndGasBill.Taxes.SecondVATPercentage << ": "
 		<< ElectricityAndGasBill.Taxes.SecondVATAmount << endl;
-	cout << "Total VTA" << ElectricityAndGasBill.Taxes.TotalVATAmount << endl;
+	cout << "Total VTA: " <<
+		"\033[1;96m" << ElectricityAndGasBill.Taxes.TotalVATAmount << "\033[0m" << endl;
 	cout << "Fixed Consumption Duty: " << ElectricityAndGasBill.Taxes.FixedConsumptionDuty << endl;
 	cout << "Housing Tax: " << ElectricityAndGasBill.Taxes.HousingTax << endl;
 	cout << "Contribution: " << ElectricityAndGasBill.Taxes.Contribution << endl;
@@ -84,16 +113,18 @@ void PrintBodyElectricityAndGasBill(const sElectricityAndGasBill& ElectricityAnd
 	cout << "RGPE Tax Amount: " << ElectricityAndGasBill.Taxes.RGPETaxAmount << endl;
 	
 	cout << "__________________________________________\n";
-	cout << "|" << setw(42) << ElectricityAndGasBill.AmountWithTaxes << "|\n";
+	cout << "|" << "Amount With Taxes: " << left << setw(30) 
+		<<("\033[1;96m" + to_string(ElectricityAndGasBill.AmountWithTaxes) + "\033[0m") << "  |\n";
 	cout << "__________________________________________\n";
 
-	cout << "Stamp" << ElectricityAndGasBill.StampPercentage << ": " 
+
+	cout << "\nStamp" << ElectricityAndGasBill.StampPercentage << ": " 
 		<< ElectricityAndGasBill.StampAmount << endl;
 
 
-	cout << "__________________________________________\n";
-	cout << "|Total Amount Due Cash: " << setw(17) << 
-		ElectricityAndGasBill.TotalAmountDueCash << "|" << endl;
+	cout << "\n__________________________________________\n";
+	cout << "|" << "Amount With Taxes: " << left << setw(30) <<
+		("\033[1;96m" + to_string(ElectricityAndGasBill.AmountWithTaxes) + "\033[0m") << "  |\n";
 	cout << "------------------------------------------\n";
 
 
@@ -107,7 +138,6 @@ void PrintFootarElectricityAndGasBill()
 
 void PrintElectricityAndGasBill(const sElectricityAndGasBill& ElectricityAndGasBill)
 {
-
 	PrintHeadarElectricityAndGasBill();
 	PrintBodyElectricityAndGasBill(ElectricityAndGasBill);
 	PrintFootarElectricityAndGasBill();

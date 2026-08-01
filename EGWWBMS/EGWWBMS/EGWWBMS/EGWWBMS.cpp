@@ -4,6 +4,7 @@
 
 
 #include <iostream>
+#include <string>
 #include "MainMenuProgram.h"
 using namespace std;
 

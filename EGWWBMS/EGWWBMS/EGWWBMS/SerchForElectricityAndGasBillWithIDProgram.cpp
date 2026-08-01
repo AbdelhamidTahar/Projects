@@ -16,11 +16,12 @@ bool SearchForElectricityAndGasBillWithIDProgram()
 		(BillID, ElectricityAndGasBill)
 		)
 	{
+		system("cls");
 		PrintElectricityAndGasBill(ElectricityAndGasBill);
+		Menus::GoBackToSerchMenu("", true);
 		return true;
 	}
-	SarchMenuProgram("Error: No Electricity and Gas Bill found with this ID!");
-	
+	Menus::GoBackToSerchMenu("\n\033[1;31mError: No Electricity and Gas Bill found with this ID\033[0m\n");
 
 
 	return false;

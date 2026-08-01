@@ -28,20 +28,21 @@ bool SerchForElectricityAndGasBillWithClientIDProgram()
 
 	if (vElectricityAndGasBill.empty())
 	{
-		SarchMenuProgram("Sorry, there are currently no bills for this client!\n");
+		Menus::GoBackToSerchMenu("Sorry, there are currently no bills for this client!\n");
 		return false;
 	}
 
+	system("cls");
 	int CountBill = 1;
 	for (const sElectricityAndGasBill& sElectricityAndGasBill : vElectricityAndGasBill)
 	{
 		cout << endl;
-		cout << "Bill Number: " << CountBill << endl;
+		cout << "Bill Number: " << "\033[33m" << CountBill << "\033[0m" << endl;
 		PrintElectricityAndGasBill(sElectricityAndGasBill);
 		CountBill++;
 	}
 
-
+	Menus::GoBackToSerchMenu("", true);
 
 	return true;
 }

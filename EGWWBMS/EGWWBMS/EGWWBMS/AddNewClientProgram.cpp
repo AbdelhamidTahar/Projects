@@ -2,6 +2,7 @@
 #include "ClientProgram.h"
 #include "Input.h"
 #include "Print.h"
+#include "UI.h"
 
 
 bool AddNewClient()
@@ -10,8 +11,8 @@ bool AddNewClient()
 
 	if (ClientProgram(Client))
 	{
-		AddMenuProgram
-		("Error: A client with this ID already exists! Please choose another ID.\n");
+		Menus::GoBackToAddMenu
+		("\033[31mError: A client with this ID already exists! Please choose another ID.\n\033[0m");
 		return false;
 	}
 
@@ -35,11 +36,15 @@ bool AddNewClients()
 		system("cls");
 		if (AddNewClient())
 		{
-			cout << "\nClient added successfully!\n";
+			cout << "\n\033[32mClient added successfully!\033[0m\n";
 
-			cout << "\nDo You Want Add More Electricity And GasBill: ";
+			cout << "\nDo You Want Add More Client: ";
 			cin >> Answer;
 			Answer = toupper(Answer);
+		}
+		else
+		{
+			return false;
 		}
 
 	} while (Answer == 'Y');

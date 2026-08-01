@@ -157,11 +157,16 @@ string ElectricityAndGasBillDataOperations::GenerateBillID()
 	vector<sElectricityAndGasBill> vElectricityAndGasBills =
 		ElectricityAndGasBillDataOperations::LoadAllElectricityAndGasBills();
 
+	if (vElectricityAndGasBills.empty())
+	{
+		return  "1";
+	}
+
 	sElectricityAndGasBill LastElectricityAndGasBills =
 		vElectricityAndGasBills[vElectricityAndGasBills.size() - 1];
 
 
-	BillID = to_string(stod(LastElectricityAndGasBills.ID) + 1);
+	BillID = to_string(stoi(LastElectricityAndGasBills.ID) + 1);
 
 	return BillID;
 }

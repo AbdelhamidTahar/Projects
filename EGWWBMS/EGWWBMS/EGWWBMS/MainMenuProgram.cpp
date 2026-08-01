@@ -17,6 +17,11 @@ void ExecuteMainMenuChoice(const eMainMenuChoice& MainMenuChoice)
 		SarchMenuProgram();
 		break;
 	}
+	default:
+	{
+		cout << "\n\nEndProgram;)\n\n";
+		break;
+	}
 	}
 
 	return;
@@ -28,7 +33,7 @@ void MainMenuProgram()
 	eMainMenuChoice MainMenuChoice;
 
 	Menus::PrintMainMenu();
-	MainMenuChoice = Reads::ReadMainMenuchose();
+	MainMenuChoice = (eMainMenuChoice) Reads::ReadChose(1,3);
 	ExecuteMainMenuChoice(MainMenuChoice);
 
 	return;

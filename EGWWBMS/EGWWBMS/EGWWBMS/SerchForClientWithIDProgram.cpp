@@ -10,11 +10,13 @@ bool SerchForClientWithIDProgram()
 
 	if (!ClientProgram(Client))
 	{
-		SarchMenuProgram("Error: Sorry, no client found with this ID!\n");
+		Menus::GoBackToSerchMenu("\033[1;31mError: Sorry, no client found with this ID!\033[0m\n");
 		return false;
 	}
 
 	PrintClient(Client);
+
+	Menus::GoBackToSerchMenu("", true);
 
 
 	return true;

@@ -8,10 +8,10 @@ double CalculateAmountWithoutTaxes
 {
 	double AmountWithoutTaxes = 0;
 
-	AmountWithoutTaxes = ElectricityTranchesData.PrimaryTranchesTotalAmount +
+	AmountWithoutTaxes += ElectricityTranchesData.PrimaryTranchesTotalAmount +
 		ElectricityTranchesData.SecondaryTranchesTotalAmount;
 
-	AmountWithoutTaxes = GasTranchesData.PrimaryTranchesTotalAmount +
+	AmountWithoutTaxes += GasTranchesData.PrimaryTranchesTotalAmount +
 		GasTranchesData.SecondaryTranchesTotalAmount;
 
 	AmountWithoutTaxes += Taxes.FixedCharges;

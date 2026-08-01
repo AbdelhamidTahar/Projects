@@ -3,6 +3,7 @@
 #include <cctype>
 #include "Input.h"
 #include "Math.h"
+#include "UI.h"
 using namespace std;
 
 bool Validations::IsHasSymbol(const string& Input)
@@ -69,12 +70,13 @@ string Reads::ReadID(const string& Message)
 {
 	string ID = "";
 	cout << Message;
-	cin >> ID;
+	getline(cin >> ws, ID);
+
 
 	if (!Validations::IsIDValidat(ID))
 	{
 		Messages::PrintErrorMessage
-		("Invalid input. Symbols are not allowed. Please enter a ID and try again.\n");
+		("\033[1;31mInvalid input. Symbols are not allowed. Please enter an ID and try again.\033[0m\n");
 		return ReadID(Message);
 	}
 	return ID;
@@ -117,12 +119,13 @@ double Reads::ReadPositiveDecimalNumber(const string& Message)
 {
 	string DecimalNumber = "";
 	cout << Message;
-	cin >> DecimalNumber;
+	getline(cin >> ws, DecimalNumber);
+
 
 	if (Checks::IsStringEmpty(DecimalNumber))
 	{
 		Messages::PrintErrorMessage
-		("Invalid input. Null are not allowed. Please enter a decimal number and try again.\n");
+		("\033[1;31mInvalid input. Null are not allowed. Please enter a decimal number and try again.\033[0m\n");
 		return ReadPositiveDecimalNumber(Message);
 	}
 
@@ -150,7 +153,7 @@ double Reads::ReadNewIndex(const double& OldIndex,const string& Message)
 	while (NewIndex < OldIndex)
 	{
 		Messages::PrintErrorMessage
-		("Error: NewIndex cannot be less than OldIndex. Invalid input, please try again.\n");
+		("\033[1;31mError: NewIndex cannot be less than OldIndex. Invalid input, please try again.\033[0m\n");
 		NewIndex = ReadPositiveDecimalNumber(Message);
 	}
 
@@ -164,65 +167,40 @@ double Reads::ReadFactor(const string& Message)
 	while (Factor == 0)
 	{
 		Messages::PrintErrorMessage
-		("Error: Factor cannot be zero. Factor must be greater than zero. Please try again.\n");
+		("\033[1;31mError: Factor cannot be zero. Factor must be greater than zero. Please try again.\033[0m\n");
 		Factor = ReadPositiveDecimalNumber(Message);
 	}
 
 	return Factor;
 }
-
-eMainMenuChoice Reads::ReadMainMenuchose()
-{
-	int operation = 0;
-	cout << "Please select the operation you wish to perform: ";
-	cin >> operation;
-
-	while (!CheckMath::IsNumberInRange(operation, 1, 3))
-	{
-		cout << endl;
-		cout << "Error: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\n";
-		cout << "Please select the operation you wish to perform: ";
-		cin >> operation;
-	}
-
-
-	return (eMainMenuChoice)operation;
-}
-
-eAddMenuChoice Reads::ReadAddMenuchose()
-{
-	int operation = 0;
-	cout << "Please select the operation you wish to perform: ";
-	cin >> operation;
-
-	while (!CheckMath::IsNumberInRange(operation, 1, 3))
-	{
-		cout << endl;
-		cout << "Error: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\n";
-		cout << "Please select the operation you wish to perform: ";
-		cin >> operation;
-	}
-
-
-	return (eAddMenuChoice)operation;
-}
             
-eSarchMenuChoice Reads::ReadSarchMenuchose()
+short Reads::ReadChose(const short FromRang,const short ToRang)
 {
-	int operation = 0;
-	cout << "Please select the operation you wish to perform: ";
-	cin >> operation;
 
-	while (!CheckMath::IsNumberInRange(operation, 1, 7))
+	string operation = "";
+	cout << "Please select the operation you wish to perform: ";
+	getline(cin >> ws, operation);
+
+	while
+		(
+			(Checks::IsStringEmpty(operation)) 
+		    ||
+			(Validations::IsHasSymbol(operation)) 
+			||
+			(Validations::IsHasChar(operation))
+			||
+			(!CheckMath::IsNumberInRange(stoi(operation), FromRang, ToRang))
+
+	)
 	{
-		cout << endl;
-		cout << "Error: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\n";
-		cout << "Please select the operation you wish to perform: ";
-		cin >> operation;
+
+		string Message = "\n\033[31mError: Sorry, the selected operation is invalid or unavailable.Please choose an existing option!\033[0m\n" +
+			string("\nPlease select the operation you wish to perform: ");
+		cout << Message;
+		getline(cin >> ws, operation);
 	}
 
-
-	return (eSarchMenuChoice)operation;
+	return stoi(operation);
 }
 
 bool Validations::IsFullNameValidat(const string& FullName)
@@ -239,7 +217,7 @@ string Reads::ReadFullName()
 	if (!Validations::IsFullNameValidat(FullName))
 	{
 		Messages::PrintErrorMessage
-		("Invalid input. Symbols and Digits are not allowed. Please enter a Fuul Name and try again.\n");
+		("\033[1;31mInvalid input. Symbols and Digits are not allowed. Please enter a Full Name and try again.\033[0m\n");
 		FullName = ReadFullName();
 	}
 	return FullName;

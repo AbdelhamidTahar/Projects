@@ -94,6 +94,19 @@ double ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
 
 
 {
+	char Answer = 'N';
+	cout << "\nDo you want to enter the old index manually, or fetch it directly from the database?"<<endl;
+	cout << "Enter Y if you want to enter it manually, or N if you want to fetch it directly from the database.: ";
+	std::numeric_limits<std::streamsize>::max();
+	cin >> Answer;
+	Answer = toupper(Answer);
+
+	if (Answer == 'Y')
+	{
+		return Reads::ReadPositiveDecimalNumber("\nPlease Enter Old Index: ");
+	}
+
+
 	vector< sElectricityAndGasBill> vElectricityAndGasBills;
 	vElectricityAndGasBills = ElectricityAndGasBillDataOperations::LoadAllElectricityAndGasBills(FileName);
 	sElectricityAndGasBill LastElectricityAndGasBillByClient;

@@ -41,11 +41,7 @@ namespace Reads
 
 	double ReadFactor(const string& Message);
 
-	eMainMenuChoice ReadMainMenuchose();
-
-	eAddMenuChoice ReadAddMenuchose();
-
-	eSarchMenuChoice ReadSarchMenuchose();
+	short ReadChose(const short FromRang, const short ToRang);
 }
 
 namespace Messages

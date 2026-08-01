@@ -25,19 +25,29 @@ void Menus::PrintFootarMainMenu()
 {
 	cout << "--------------------------------------\n";
 }
-void Menus::PrintMainMenu(const string& ErrorMessage )
+void Menus::PrintMainMenu( const string& Message)
 {
 	system("cls");
 	PrintHeadarMainMenu();
 	PrintBodyMainMenu();
 	PrintFootarMainMenu();
-	Messages::PrintErrorMessage(ErrorMessage);
+	cout << Message << endl;
 }
-void Menus::GoBackTotMainMenu(const string& ErrorMessage )
+void Menus::GoBackTotMainMenu( const bool MessageReturn)
 {
+	if (MessageReturn)
+	{
+		cout << "Press Any Key To Go Back To Main Menu . . .\n";
+		system("pause>0");
+	}
+
 	system("cls");
-	PrintMainMenu(ErrorMessage);
+	MainMenuProgram();
 }
+
+
+
+
 
 
 
@@ -67,10 +77,17 @@ void  Menus::PrintAddMenu(const string& ErrorMessage)
 	PrintFootarAddMenu();
 	Messages::PrintErrorMessage(ErrorMessage);
 }
-void  Menus::GoBackToAddMenu(const string& ErrorMessage)
+void  Menus::GoBackToAddMenu(const string& ErrorMessage, const bool MessageReturn )
 {
+
+	if (MessageReturn)
+	{
+		cout << "\n\nPress any key to go back to Add Menue...";
+		system("pause>0");
+	}
+
 	system("cls");
-	PrintAddMenu(ErrorMessage);
+	AddMenuProgram(ErrorMessage);
 }
 
 
@@ -88,7 +105,7 @@ void Menus::PrintBodySerchMenu()
 {
 	cout << "[1] Serch For Electricity & Gas Bill With ID\n";
 	cout << "[2] Serch For Electricity & Gas Bill With Client ID\n";
-	cout << "[3] Show All Electricity & Gas Bills";
+	cout << "[3] Show All Electricity & Gas Bills\n";
 	cout << "[4] Serch For Client With ID\n";
 	cout << "[5] Serch For Client With Full Name\n";
 	cout << "[6] Show All Clients\n";
@@ -106,8 +123,17 @@ void Menus::PrintSerchMenu(const string& ErrorMessage )
 	PrintFootarSerchMenu();
 	Messages::PrintErrorMessage(ErrorMessage);
 }
-void Menus::GoBackToSerchMenu(const string& ErrorMessage)
+void Menus::GoBackToSerchMenu(const string& ErrorMessage ,const bool MessageReturn)
 {
+	if (MessageReturn)
+	{
+		cout << "Press Any Key To Go Back To Serch Menu . . .\n";
+		system("pause>0");
+	}
+
 	system("cls");
-	PrintSerchMenu(ErrorMessage);
+	SarchMenuProgram(ErrorMessage);
+
 }
+
+

@@ -12,12 +12,19 @@ void ExecuteAddMenuChoice(const eAddMenuChoice& AddMenuChoice)
 	{
 	case eAddMenuChoice::ElectricityAndGasBill:
 	{
-		AddElectricityAndGasBillsProgram();
+		if(AddElectricityAndGasBillsProgram())
+			Menus::GoBackToAddMenu("", true);
 		break;
 	}
 	case eAddMenuChoice::Client:
 	{
-		AddNewClients();
+		if(AddNewClients())
+			Menus::GoBackToAddMenu("", true);
+		break;
+	}
+	default:
+	{
+		Menus::GoBackTotMainMenu();
 		break;
 	}
 	}
@@ -26,11 +33,11 @@ void ExecuteAddMenuChoice(const eAddMenuChoice& AddMenuChoice)
 }
 
 
-void AddMenuProgram(const string Message)
+void AddMenuProgram(const string &Message)
 {
-	Menus::PrintAddMenu();
+	Menus::PrintAddMenu(Message);
 	eAddMenuChoice AddMenuChoice;
 
-	AddMenuChoice = Reads::ReadAddMenuchose();
+	AddMenuChoice = (eAddMenuChoice)Reads::ReadChose(1, 3);
 	ExecuteAddMenuChoice(AddMenuChoice);
 }

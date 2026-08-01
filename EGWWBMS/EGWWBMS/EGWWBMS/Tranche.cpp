@@ -10,7 +10,7 @@ sTranche TrancheOperations::ReadTrancheInfo()
 		Reads::ReadPositiveDecimalNumber("Enter maximum consumption for the tranche: ");
 
 	Tranch.TrancheUnitPrice = 
-		Reads::ReadPositiveDecimalNumber("\nPlease enter the unit price: ");
+		Reads::ReadPositiveDecimalNumber("Please enter the unit price: ");
 
 	return Tranch;
 }
@@ -53,7 +53,7 @@ sTranche TrancheOperations::GetTrancheMaxConsumption(sTranche Tranch)
 vector <sTranche> TrancheOperations::GetLastTrancheMaxConsumption(vector <sTranche> vTranchs)
 {
 	short LastTrancheIndex = GetLastTrancheIndex(vTranchs);
-	vTranchs[LastTrancheIndex] = GetTrancheMaxConsumption(vTranchs[LastTrancheIndex]);
+	vTranchs[LastTrancheIndex-1] = GetTrancheMaxConsumption(vTranchs[LastTrancheIndex-1]);
 	return vTranchs;
 }
 
@@ -70,7 +70,7 @@ vector <sTranche> TranchesOperations::ReadTranchesInfo()
 
 	do
 	{
-		cout << "Reading information for tranche number [" << Count << "]\n";
+		cout << "\nReading information for tranche number [" << Count << "]\n";
 		Tranch = TrancheOperations::ReadTrancheInfo();
 		vTranchesInfo.push_back(Tranch);
 		Count++;
@@ -86,16 +86,23 @@ vector <sTranche> TranchesOperations::ReadTranchesInfo()
 vector <sTranche> TranchesOperations::DistributeConsumptionToTranches
     (double Consumption, vector <sTranche> vTranchs)
 {
+	vector <sTranche> TvTranchs;
 	for (sTranche& Tranch : vTranchs)
+	{
 		Tranch = TrancheOperations::DistributeConsumptionToTranche(Consumption, Tranch);
-	return vTranchs;
+		TvTranchs.push_back(Tranch);
+	}
+	return TvTranchs;
 }
 
 vector <sTranche> TranchesOperations::CalculateTranchesAmounts(vector <sTranche> vTranchs)
 {
-	
+	vector <sTranche> TvTranchs;
 	for (sTranche& Tranch : vTranchs)
+	{
 		Tranch = TrancheOperations::CalculateTrancheAmount(Tranch);
+		TvTranchs.push_back(Tranch);
+	}
 	return vTranchs;
 }
 

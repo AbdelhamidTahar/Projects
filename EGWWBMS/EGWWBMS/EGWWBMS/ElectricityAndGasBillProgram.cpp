@@ -19,7 +19,7 @@ bool  AddElectricityAndGasBillProgram()
 
 	if (!ClientProgram(ElectricityAndGasBill.Client))
 	{
-		AddMenuProgram("Error: Client not found.\n");
+		Menus::GoBackToAddMenu("\033[1;31mError: Client not found.\033[0m\n");
 		return false;
 	}
 
@@ -55,6 +55,7 @@ bool  AddElectricityAndGasBillProgram()
 
 	ElectricityAndGasBillDataOperations::SaveElectricityAndGasBillsInFile(ElectricityAndGasBill);
 
+	system("cls");
 	PrintElectricityAndGasBill(ElectricityAndGasBill);
 
 
@@ -69,11 +70,15 @@ bool AddElectricityAndGasBillsProgram()
 		system("cls");
 		if(AddElectricityAndGasBillProgram())
 		{
-			cout << "\nBill added successfully!\n";
+			cout << "\n\033[32mBill added successfully!\033[0m\n";
 
 			cout << "\nDo You Want Add More Electricity And GasBill: ";
 			cin >> Answer;
 			Answer = toupper(Answer);
+		}
+		else
+		{
+			return false;
 		}
 
 	} while (Answer == 'Y');

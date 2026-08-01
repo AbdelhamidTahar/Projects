@@ -59,6 +59,6 @@ void SarchMenuProgram(const string Message)
 	Menus::PrintSerchMenu(Message);
 	eSarchMenuChoice SarchMenuChoice;
 
-	SarchMenuChoice = Reads::ReadSarchMenuchose();
+	SarchMenuChoice = (eSarchMenuChoice)Reads::ReadChose(1, 7);
 	ExecuteSarchMenuChoice(SarchMenuChoice);
 }

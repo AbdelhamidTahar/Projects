@@ -14,6 +14,8 @@ sElectricityOrGasBil ElectricityOrGasBillProgram
 {
 	sElectricityOrGasBil ElectricityOrGasBil;
 
+	
+
 	ElectricityOrGasBil.OldIndex = ElectricityOrGasBillDataOperations::GetOldElectricityOrGasIndex
 	(Client.ID, "ElectricityAndGasBills", eTypeOfBill);
 

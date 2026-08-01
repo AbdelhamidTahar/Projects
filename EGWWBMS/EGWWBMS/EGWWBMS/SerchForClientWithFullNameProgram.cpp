@@ -15,7 +15,7 @@ bool SerchForClientWithFullNameProgram()
 
 	if (vClient.empty())
 	{
-		SarchMenuProgram("Error: Sorry, there are no clients found with this name!\n");
+		Menus::GoBackToSerchMenu("Error: Sorry, there are no clients found with this name!\n");
 		return false;
 	}
 	 
@@ -34,18 +34,20 @@ bool SerchForClientWithFullNameProgram()
 
 	if (IsClientExectByFullName == false)
 	{
-		Menus::GoBackToSerchMenu("Sorry, no client found with this full name!\n");
+		Menus::GoBackToSerchMenu("\033[1;31mSorry, no client found with this full name!\033[0m\n");
 		return false;
 	}
 
+	system("cls");
 	int Count = 1;
 	for (const sClient& Client : TvClient)
 	{
-		cout << "\nClient Number: " << Count << endl;
+		cout << "\nClient Number: " << "\033[1;33m" << Count << "\033[0m";
 		PrintClient(Client);
 		Count++;
 	}
 
+	Menus::GoBackToSerchMenu("", true);
 
 	return true;
 }
